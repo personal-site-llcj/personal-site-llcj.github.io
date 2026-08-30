@@ -1,0 +1,453 @@
+<main class="home">
+  <div class="home__background"></div>
+
+  @if (view() === 'home') {
+
+  <div class="home__container" [class.home__container--tutorial]="tutorialOpen()">
+
+    <header class="home__header">
+
+      <button class="theme-button" data-tutorial-target="theme" [class.tutorial-target--active]="
+        tutorialOpen() &&
+        tutorialSpotlightVisible() &&
+        currentTutorialStep.target === 'theme'
+      " type="button" (click)="toggleTheme()" [attr.aria-label]="
+        isDark()
+          ? 'Cambiar a modo claro'
+          : 'Cambiar a modo oscuro'
+      " [attr.title]="
+        isDark()
+          ? 'Cambiar a modo claro'
+          : 'Cambiar a modo oscuro'
+      ">
+
+        <span aria-hidden="true">
+          {{ isDark() ? '☾' : '☼' }}
+        </span>
+
+      </button>
+
+
+      <div class="home__intro" data-tutorial-target="welcome" [class.tutorial-target--active]="
+        tutorialOpen() &&
+        tutorialSpotlightVisible() &&
+        currentTutorialStep.target === 'welcome'
+      ">
+
+
+        <span class="home__eyebrow">
+          Un pequeño espacio para ti
+        </span>
+
+
+        <h1>
+          Hola, Lily.
+        </h1>
+
+
+        <p>
+          Qué bueno que llegaste.
+        </p>
+
+
+      </div>
+
+
+      <a routerLink="/from-me" class="from-me-button" data-tutorial-target="from-me" [class.tutorial-target--active]="
+    tutorialOpen() &&
+    tutorialSpotlightVisible() &&
+    currentTutorialStep.target === 'from-me'
+  ">
+
+        <span aria-hidden="true">
+          ✉
+        </span>
+
+        <span>
+          Algo de mi parte
+        </span>
+
+      </a>
+
+
+    </header>
+
+    <section class="home__question">
+      <span>¿Qué necesitas hoy?</span>
+    </section>
+
+    <section class="home__options" data-tutorial-target="options" [class.tutorial-target--active]="
+          tutorialOpen() &&
+          tutorialSpotlightVisible() &&
+          currentTutorialStep.target === 'options'
+        ">
+
+      <button class="option-card option-card--primary" type="button" routerLink="/motivation">
+
+        <span class="option-card__icon">♡</span>
+
+        <span class="option-card__content">
+          <strong>Un poquito de ánimo</strong>
+          <small>Algo que quiero recordarte</small>
+        </span>
+
+        <span class="option-card__arrow">→</span>
+      </button>
+
+      <button class="option-card" type="button" routerLink="/breathe">
+
+        <span class="option-card__icon">〰</span>
+
+        <span class="option-card__content">
+          <strong>Necesito respirar</strong>
+          <small>Vamos a bajar un poquito el ritmo</small>
+        </span>
+
+        <span class="option-card__arrow">→</span>
+      </button>
+
+      <button class="option-card" type="button" routerLink="/pause">
+
+        <span class="option-card__icon">○</span>
+
+        <span class="option-card__content">
+          <strong>Necesito una pausa</strong>
+          <small>Cinco minutos lejos de todo</small>
+        </span>
+
+        <span class="option-card__arrow">→</span>
+      </button>
+
+      <button class="option-card" type="button" routerLink="/accompanied">
+
+        <span class="option-card__icon">♡</span>
+
+        <span class="option-card__content">
+          <strong>Necesito sentirme acompañada</strong>
+          <small>Hay algo que quiero decirte</small>
+        </span>
+
+        <span class="option-card__arrow">→</span>
+      </button>
+
+    </section>
+
+    <section class="home__surprise" data-tutorial-target="surprise" [class.tutorial-target--active]="
+          tutorialOpen() &&
+          tutorialSpotlightVisible() &&
+          currentTutorialStep.target === 'surprise'
+        ">
+
+      <p>Y si no sabes qué necesitas...</p>
+
+      <button class="surprise-button" type="button" (click)="openMoodPicker()">
+
+        <span class="surprise-button__symbol">✦</span>
+        <span>Déjame elegir por ti</span>
+      </button>
+
+    </section>
+
+    <section class="home__help">
+      <button class="help-button" type="button" (click)="openTutorial()">
+
+        <span class="help-button__symbol" aria-hidden="true">
+          ?
+        </span>
+
+        <span>
+          Cómo usar este espacio
+        </span>
+      </button>
+    </section>
+
+    <footer class="home__footer">
+      <span>
+        Hecho para los días buenos, y también para los no tan buenos.
+      </span>
+    </footer>
+
+  </div>
+
+  @if (tutorialOpen()) {
+
+  <section class="tutorial" [class.tutorial--welcome]="currentTutorialStep.target === 'welcome'"
+    [class.tutorial--options]="currentTutorialStep.target === 'options'"
+    [class.tutorial--surprise]="currentTutorialStep.target === 'surprise'"
+    [class.tutorial--theme]="currentTutorialStep.target === 'theme'"
+    [class.tutorial--privacy]="currentTutorialStep.target === 'none'" role="dialog" aria-modal="true"
+    aria-label="Cómo usar este espacio">
+
+    <div class="tutorial__backdrop" aria-hidden="true">
+    </div>
+
+    <article class="tutorial__card">
+
+      <header class="tutorial__header">
+
+        <div class="tutorial__progress">
+
+          <span class="tutorial__step-number">
+            {{ tutorialStepNumber }} / {{ tutorialStepCount }}
+          </span>
+
+          <div class="tutorial__dots" aria-hidden="true">
+
+            @for (
+            step of tutorialSteps;
+            track $index
+            ) {
+
+            <span class="tutorial__dot" [class.tutorial__dot--active]="
+                      $index === tutorialStepIndex()
+                    " [class.tutorial__dot--complete]="
+                      $index < tutorialStepIndex()
+                    ">
+            </span>
+
+            }
+
+          </div>
+
+        </div>
+
+        <button class="tutorial__close" type="button" aria-label="Cerrar tutorial" (click)="closeTutorial()">
+          ×
+        </button>
+
+      </header>
+
+      <div class="tutorial__content">
+
+        @if (currentTutorialStep.target === 'none') {
+        <span class="tutorial__important" style="
+                  display: block;
+                  width: 100%;
+                  margin: 0 0 20px;
+                  color: var(--vela-accent-deep);
+                  font-size: 13px;
+                  font-weight: 700;
+                  letter-spacing: 2.2px;
+                  text-align: center;
+                  text-transform: uppercase;
+                ">
+          IMPORTANTE
+        </span>
+        }
+
+        <span class="tutorial__symbol">
+          ✦
+        </span>
+
+        <span class="tutorial__eyebrow">
+          {{ currentTutorialStep.eyebrow }}
+        </span>
+
+        <h2>
+          {{ currentTutorialStep.title }}
+        </h2>
+
+        <p>
+          {{ currentTutorialStep.text }}
+        </p>
+
+        @if (currentTutorialStep.target === 'options') {
+
+        <div class="tutorial__option-guide">
+
+          <div class="tutorial__option-guide-item">
+            <span class="tutorial__option-guide-symbol">♡</span>
+            <div>
+              <strong>Un poquito de ánimo: </strong>
+              <small>Mensajes para recordarte lo capaz y valiosa que eres.</small>
+            </div>
+          </div>
+
+          <div class="tutorial__option-guide-item">
+            <span class="tutorial__option-guide-symbol">〰</span>
+            <div>
+              <strong>Necesito respirar: </strong>
+              <small>Ejercicios para respirar, soltar tensión y despejar tu mente.</small>
+            </div>
+          </div>
+
+          <div class="tutorial__option-guide-item">
+            <span class="tutorial__option-guide-symbol">○</span>
+            <div>
+              <strong>Necesito una pausa: </strong>
+              <small>Pequeñas actividades para distraerte y salir un rato del trabajo.</small>
+            </div>
+          </div>
+
+          <div class="tutorial__option-guide-item">
+            <span class="tutorial__option-guide-symbol">♡</span>
+            <div>
+              <strong>Necesito sentirme acompañada: </strong>
+              <small>Palabras que escribí para ti, para cuando necesites un poquito de compañía.</small>
+            </div>
+          </div>
+
+        </div>
+
+        }
+
+      </div>
+
+      <footer class="tutorial__actions">
+
+        @if (!isFirstTutorialStep) {
+
+        <button class="tutorial__button tutorial__button--secondary" type="button" (click)="previousTutorialStep()">
+
+          ←
+          <span>Anterior</span>
+
+        </button>
+
+        } @else {
+
+        <span class="tutorial__actions-spacer"></span>
+
+        }
+
+        <button class="tutorial__button tutorial__button--primary" type="button" (click)="nextTutorialStep()">
+
+          @if (isLastTutorialStep) {
+
+          <span>Entendido</span>
+          <span aria-hidden="true">✦</span>
+
+          } @else {
+
+          <span>Siguiente</span>
+          <span aria-hidden="true">→</span>
+
+          }
+
+        </button>
+
+      </footer>
+
+    </article>
+
+  </section>
+
+  }
+
+  }
+
+  @if (view() === 'mood') {
+
+  <section class="mood-picker">
+
+    <div class="mood-picker__glow mood-picker__glow--one"></div>
+    <div class="mood-picker__glow mood-picker__glow--two"></div>
+
+    <button class="mood-picker__back" type="button" aria-label="Volver" (click)="backHome()">
+      ←
+    </button>
+
+    <div class="mood-picker__content">
+
+      <span class="mood-picker__eyebrow">
+        Déjame elegir por ti
+      </span>
+
+      <header class="mood-picker__header">
+
+        <span class="mood-picker__symbol">
+          ✦
+        </span>
+
+        <h2>
+          ¿Cómo te sientes ahora?
+        </h2>
+
+        <p>
+          No tienes que pensarlo demasiado.
+          Elige lo que más se acerque.
+        </p>
+
+      </header>
+
+      <div class="mood-picker__options">
+
+        @for (mood of moods; track mood.id) {
+
+        <button class="mood-card" type="button" (click)="chooseMood(mood.id)">
+
+          <span class="mood-card__symbol">
+            {{ mood.symbol }}
+          </span>
+
+          <span class="mood-card__copy">
+
+            <strong>
+              {{ mood.title }}
+            </strong>
+
+            <small>
+              {{ mood.subtitle }}
+            </small>
+
+          </span>
+
+          <span class="mood-card__arrow">
+            →
+          </span>
+
+        </button>
+
+        }
+
+      </div>
+
+
+      <button class="mood-picker__back-bottom" type="button" (click)="backHome()">
+
+        <span aria-hidden="true">
+          ←
+        </span>
+
+        Volver
+
+      </button>
+
+    </div>
+
+    <span class="mood-picker__footer">
+      No hay una respuesta correcta.
+    </span>
+
+  </section>
+
+  }
+
+  @if (view() === 'choosing') {
+
+  <section class="chooser">
+
+    <div class="chooser__glow chooser__glow--one"></div>
+    <div class="chooser__glow chooser__glow--two"></div>
+
+    <div class="chooser__content">
+
+      <span class="chooser__symbol">
+        ✦
+      </span>
+
+      <p class="chooser__line">
+        {{ choosingLine() }}
+      </p>
+
+      <span class="chooser__small">
+        Tú solo quédate aquí un segundo.
+      </span>
+
+    </div>
+
+  </section>
+
+  }
+
+</main>

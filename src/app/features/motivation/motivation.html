@@ -1,0 +1,75 @@
+<main class="motivation">
+  <div class="motivation__background"></div>
+
+  <div class="motivation__container">
+
+    <header class="motivation__header">
+      <a
+        routerLink="/home"
+        class="back-button"
+        aria-label="Volver al inicio">
+        ←
+      </a>
+
+      <span class="motivation__eyebrow">
+        Un poquito de ánimo
+      </span>
+    </header>
+
+    <section class="motivation__content">
+
+      <div class="motivation__intro">
+        <span>Para ti, Lily.</span>
+
+        <p>
+          Solo por si hoy necesitabas leer esto.
+        </p>
+      </div>
+
+      <article
+        class="message-card"
+        [class.message-card--changing]="changing()">
+
+        <span
+          class="message-card__symbol"
+          aria-hidden="true">
+          ✦
+        </span>
+
+        <p class="message-card__text">
+          “{{ currentMessage().text }}”
+        </p>
+
+      </article>
+
+      <div class="motivation__actions">
+
+        <a
+          routerLink="/home"
+          class="action-button action-button--back">
+          <span class="action-button__back-icon">←</span>
+          <span>Volver</span>
+        </a>
+
+        <button
+          class="action-button action-button--another"
+          type="button"
+          [disabled]="changing()"
+          (click)="showAnotherMessage()">
+
+          <span>Otro mensaje</span>
+          <span class="action-button__refresh-icon">↻</span>
+
+        </button>
+
+      </div>
+
+    </section>
+
+    <footer class="motivation__footer">
+      <span>No tienes que quedarte mucho tiempo.</span>
+      <span>Solo el que necesites.</span>
+    </footer>
+
+  </div>
+</main>

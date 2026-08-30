@@ -1,0 +1,879 @@
+<main class="breathe">
+  <div class="breathe__background"></div>
+
+  <div class="breathe__container">
+
+    <header class="breathe__header">
+      @if (mode() === 'menu') {
+        <a
+          routerLink="/home"
+          class="back-button"
+          aria-label="Volver al inicio">
+          ←
+        </a>
+      } @else {
+        <button
+          class="back-button"
+          type="button"
+          aria-label="Volver"
+          (click)="goBackToMenu()">
+          ←
+        </button>
+      }
+
+      <span class="breathe__eyebrow">
+        Un momento para respirar
+      </span>
+    </header>
+
+    <!-- MENU PRINCIPAL -->
+
+    @if (mode() === 'menu') {
+      <section class="breathe__content">
+
+        <div class="breathe__intro">
+          <h1>Respira conmigo.</h1>
+
+          <p>
+            No tienes que resolver nada durante los próximos minutos.
+          </p>
+        </div>
+
+        <div class="breathe__options">
+
+          <!-- RESPIRACIÓN -->
+
+          <button
+            class="breathe-card"
+            type="button"
+            (click)="openBreathing()">
+
+            <span class="breathe-card__icon">
+              ○
+            </span>
+
+            <span class="breathe-card__content">
+              <strong>Respiración guiada</strong>
+              <small>Un minuto para bajar el ritmo</small>
+            </span>
+
+            <span class="breathe-card__arrow">
+              →
+            </span>
+          </button>
+
+          <!-- 5-4-3-2-1 -->
+
+          <button
+            class="breathe-card"
+            type="button"
+            (click)="openGrounding()">
+
+            <span class="breathe-card__icon breathe-card__icon--numbers">
+              5·4·3
+            </span>
+
+            <span class="breathe-card__content">
+              <strong>Volver al presente</strong>
+              <small>Un ejercicio para aterrizar un poquito</small>
+            </span>
+
+            <span class="breathe-card__arrow">
+              →
+            </span>
+          </button>
+
+          <!-- DESCARGAR PENSAMIENTOS -->
+
+          <button
+            class="breathe-card"
+            type="button"
+            (click)="openUnload()">
+
+            <span class="breathe-card__icon">
+              ☁
+            </span>
+
+            <span class="breathe-card__content">
+              <strong>Tengo demasiadas cosas en la cabeza</strong>
+              <small>Vamos a sacar una de ahí</small>
+            </span>
+
+            <span class="breathe-card__arrow">
+              →
+            </span>
+          </button>
+
+          <!-- SOLTAR TENSIÓN -->
+
+          <button
+            class="breathe-card"
+            type="button"
+            (click)="openRelease()">
+
+            <span class="breathe-card__icon">
+              ≈
+            </span>
+
+            <span class="breathe-card__content">
+              <strong>Necesito soltar tensión</strong>
+              <small>Un recorrido corto para aflojar el cuerpo</small>
+            </span>
+
+            <span class="breathe-card__arrow">
+              →
+            </span>
+          </button>
+
+        </div>
+
+        <!-- NO SÉ QUÉ NECESITO -->
+
+        <button
+          class="choose-for-me"
+          type="button"
+          (click)="chooseForMe()">
+
+          <span class="choose-for-me__symbol">
+            ✦
+          </span>
+
+          <span class="choose-for-me__content">
+            <strong>No sé qué necesito</strong>
+            <small>Déjame elegir algo por ti</small>
+          </span>
+
+          <span class="choose-for-me__arrow">
+            →
+          </span>
+
+        </button>
+
+        <a
+          routerLink="/home"
+          class="breathe-menu-back">
+          <span>←</span>
+          <span>Volver</span>
+        </a>
+
+      </section>
+    }
+
+    <!-- ELEGIR POR ELLA -->
+
+    @if (mode() === 'choosing') {
+
+      <section class="choosing">
+
+        <div class="choosing__content">
+
+          <div class="choosing__visual">
+
+            <div class="choosing__circle">
+              <span>✦</span>
+            </div>
+
+            <div class="choosing__orbit choosing__orbit--one"></div>
+            <div class="choosing__orbit choosing__orbit--two"></div>
+
+          </div>
+
+          <span class="choosing__eyebrow">
+            No tienes que decidir ahora
+          </span>
+
+          <h1>
+            {{ choosingText() }}
+          </h1>
+
+          <p>
+            Yo elijo algo para este momento.
+          </p>
+
+          <div class="choosing__dots">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+        </div>
+
+      </section>
+
+    }
+
+    <!-- RESPIRACIÓN GUIADA -->
+
+    @if (mode() === 'breathing') {
+      <section class="exercise">
+
+        <div class="exercise__heading">
+          <span>Respiración guiada</span>
+
+          <h1>Solo sigue el ritmo.</h1>
+
+          <p>
+            No necesitas hacerlo perfecto. Solo acompaña el movimiento.
+          </p>
+        </div>
+
+        @if (breathingPhase() !== 'complete') {
+
+          <div class="breathing-area">
+
+            <div
+              class="breathing-orb"
+              [class.breathing-orb--inhale]="breathingPhase() === 'inhale'"
+              [class.breathing-orb--hold]="breathingPhase() === 'hold'"
+              [class.breathing-orb--exhale]="breathingPhase() === 'exhale'"
+              [class.breathing-orb--paused]="!isRunning()">
+
+              <div class="breathing-orb__inner">
+
+                <span class="breathing-orb__phase">
+                  {{ phaseLabel() }}
+                </span>
+
+                @if (breathingPhase() !== 'idle') {
+                  <strong class="breathing-orb__counter">
+                    {{ secondsLeft() }}
+                  </strong>
+                }
+
+              </div>
+            </div>
+
+            <p class="breathing-help">
+              Inhala 4 · Mantén 4 · Exhala 6
+            </p>
+
+            @if (completedCycles() > 0) {
+              <p class="breathing-cycles">
+
+                {{ completedCycles() }}
+
+                @if (completedCycles() === 1) {
+                  ciclo
+                } @else {
+                  ciclos
+                }
+
+              </p>
+            }
+
+            <div class="breathing-controls">
+
+              <button
+                class="secondary-control"
+                type="button"
+                (click)="goBackToMenu()">
+                Volver
+              </button>
+
+              @if (!isRunning()) {
+
+                <button
+                  class="primary-control"
+                  type="button"
+                  (click)="startBreathing()">
+
+                  @if (breathingPhase() === 'idle') {
+                    Comenzar
+                  } @else {
+                    Continuar
+                  }
+
+                </button>
+
+              } @else {
+
+                <button
+                  class="primary-control"
+                  type="button"
+                  (click)="pauseBreathing()">
+                  Pausar
+                </button>
+
+              }
+
+              @if (breathingPhase() !== 'idle') {
+
+                <button
+                  class="secondary-control"
+                  type="button"
+                  (click)="finishBreathing()">
+                  Terminar
+                </button>
+
+              }
+
+            </div>
+
+          </div>
+
+        } @else {
+
+          <div class="breathing-complete">
+
+            <span class="breathing-complete__symbol">
+              ✦
+            </span>
+
+            <h2>Bien.</h2>
+
+            <p>
+              Quédate aquí un segundo.
+              No tienes que correr de vuelta a nada.
+            </p>
+
+            @if (completedCycles() > 0) {
+
+              <span class="breathing-complete__cycles">
+
+                Hiciste {{ completedCycles() }}
+
+                @if (completedCycles() === 1) {
+                  ciclo.
+                } @else {
+                  ciclos.
+                }
+
+              </span>
+
+            }
+
+            <div class="breathing-complete__actions">
+
+              <button
+                class="secondary-control"
+                type="button"
+                (click)="goBackToMenu()">
+                Volver
+              </button>
+
+              <button
+                class="primary-control"
+                type="button"
+                (click)="restartBreathing()">
+                Respirar otra vez
+              </button>
+
+            </div>
+
+          </div>
+
+        }
+
+      </section>
+    }
+
+    <!-- 5-4-3-2-1 -->
+
+    @if (mode() === 'grounding') {
+
+      <section class="exercise grounding">
+
+        <div class="exercise__heading">
+
+          <span>5 · 4 · 3 · 2 · 1</span>
+
+          <h1>Vuelve poquito a poquito.</h1>
+
+          <p>
+            No hace falta hacerlo rápido.
+            Este momento es solo para estar aquí.
+          </p>
+
+        </div>
+
+        @if (!groundingComplete()) {
+
+          <div
+            class="grounding-step"
+            [class.grounding-step--changing]="groundingChanging()">
+
+            <span class="grounding-step__number">
+              {{ currentGroundingStep().number }}
+            </span>
+
+            <div class="grounding-step__content">
+
+              <h2>
+                {{ currentGroundingStep().title }}
+              </h2>
+
+              <p>
+                {{ currentGroundingStep().text }}
+              </p>
+
+            </div>
+
+            <span class="grounding-step__progress">
+              {{ groundingIndex() + 1 }} de 5
+            </span>
+
+          </div>
+
+          <div class="grounding-actions">
+
+            @if (groundingIndex() === 0) {
+              <button
+                class="secondary-control"
+                type="button"
+                (click)="goBackToMenu()">
+                Volver
+              </button>
+            }
+
+            <button
+              class="grounding-next"
+              type="button"
+              [disabled]="groundingChanging()"
+              (click)="nextGroundingStep()">
+
+              @if (groundingIndex() < 4) {
+
+                <span>Estoy lista</span>
+                <span>→</span>
+
+              } @else {
+
+                <span>Terminar</span>
+                <span>✦</span>
+
+              }
+
+            </button>
+
+          </div>
+
+        } @else {
+
+          <div
+            class="grounding-complete"
+            [class.grounding-complete--changing]="groundingChanging()">
+
+            <span class="grounding-complete__symbol">
+              ✦
+            </span>
+
+            <h2>Bien.</h2>
+
+            <p>
+              Ya estás un poquito más aquí.
+              Quédate unos segundos antes de seguir con tu día.
+            </p>
+
+            <div class="grounding-complete__actions">
+
+              <button
+                class="secondary-control"
+                type="button"
+                (click)="goBackToMenu()">
+                Volver
+              </button>
+
+              <button
+                class="primary-control"
+                type="button"
+                (click)="restartGrounding()">
+                Hacerlo otra vez
+              </button>
+
+            </div>
+
+          </div>
+
+        }
+
+      </section>
+    }
+
+    <!-- DESCARGAR PENSAMIENTOS -->
+
+    @if (mode() === 'unload') {
+
+      <section class="exercise unload">
+
+        <div class="exercise__heading">
+
+          <span>Un poquito menos de ruido</span>
+
+          <h1>Saca una cosa de tu cabeza.</h1>
+
+          <p>
+            No tienes que resolver todo.
+            Vamos con una sola cosa.
+          </p>
+
+        </div>
+
+        <div
+          class="unload-card"
+          [class.unload-card--changing]="unloadChanging()">
+
+          @if (unloadStep() === 1) {
+
+            <span class="unload-card__step">
+              Primero
+            </span>
+
+            <h2>
+              ¿Qué es lo que más ruido está haciendo en tu cabeza ahora mismo?
+            </h2>
+
+            <p>
+              No tienes que explicarlo perfectamente.
+              Escríbelo como salga.
+            </p>
+
+            <textarea
+              class="unload-textarea"
+              rows="5"
+              maxlength="500"
+              placeholder="Puedes dejarlo aquí..."
+              [value]="unloadThought()"
+              (input)="updateUnloadThought($event)">
+            </textarea>
+
+            <div class="unload-actions">
+
+              <button
+                class="secondary-control"
+                type="button"
+                (click)="goBackToMenu()">
+                Volver
+              </button>
+
+              <button
+                class="unload-primary"
+                type="button"
+                [disabled]="!unloadThought().trim() || unloadChanging()"
+                (click)="nextUnloadStep()">
+
+                <span>Ya está fuera</span>
+                <span>→</span>
+
+              </button>
+
+            </div>
+
+          }
+
+          @if (unloadStep() === 2) {
+
+            <span class="unload-card__step">
+              Ahora míralo desde fuera
+            </span>
+
+            <h2>
+              ¿Hay algo que puedas hacer al respecto ahora mismo?
+            </h2>
+
+            <p>
+              No algo que resuelva todo.
+              Solo algo que esté realmente en tus manos ahora.
+            </p>
+
+            <div class="unload-decisions">
+
+              <button
+                type="button"
+                [disabled]="unloadChanging()"
+                (click)="canDoSomethingNow()">
+                Sí, hay algo
+              </button>
+
+              <button
+                type="button"
+                [disabled]="unloadChanging()"
+                (click)="cannotDoSomethingNow()">
+                No, ahora no
+              </button>
+
+            </div>
+
+          }
+
+          @if (unloadStep() === 3) {
+
+            <span class="unload-card__step">
+              Entonces hagámoslo pequeño
+            </span>
+
+            <h2>
+              ¿Cuál es la cosa más pequeña que puedes hacer después?
+            </h2>
+
+            <p>
+              No todo el problema.
+              Solo el siguiente paso.
+            </p>
+
+            <textarea
+              class="unload-textarea unload-textarea--small"
+              rows="3"
+              maxlength="300"
+              placeholder="Mi siguiente paso puede ser..."
+              [value]="unloadAction()"
+              (input)="updateUnloadAction($event)">
+            </textarea>
+
+            <button
+              class="unload-primary"
+              type="button"
+              [disabled]="!unloadAction().trim() || unloadChanging()"
+              (click)="finishUnloadAction()">
+
+              <span>Eso puedo hacer</span>
+              <span>→</span>
+
+            </button>
+
+          }
+
+          @if (unloadStep() === 4) {
+
+            <div class="unload-release">
+
+              <span class="unload-release__symbol">
+                ◌
+              </span>
+
+              <h2>
+                Entonces no tienes que resolverlo ahora.
+              </h2>
+
+              <p>
+                Sigue siendo importante.
+                Solo que por estos minutos puedes dejarlo aquí.
+              </p>
+
+              <div class="unload-actions unload-actions--center">
+
+                <button
+                  class="secondary-control"
+                  type="button"
+                  (click)="goBackToMenu()">
+                  Volver
+                </button>
+
+                <button
+                  class="unload-primary"
+                  type="button"
+                  (click)="restartUnload()">
+                  Soltarlo por ahora
+                </button>
+
+              </div>
+
+            </div>
+
+          }
+
+          @if (unloadStep() === 5) {
+
+            <div class="unload-release">
+
+              <span class="unload-release__symbol">
+                ✦
+              </span>
+
+              <h2>
+                Eso es suficiente por ahora.
+              </h2>
+
+              <p>
+                Ya no tienes que resolverlo todo de golpe.
+                Solo recuerda cuál es tu siguiente paso.
+              </p>
+
+              <div class="unload-action-reminder">
+                {{ unloadAction() }}
+              </div>
+
+              <div class="unload-actions unload-actions--center">
+
+                <button
+                  class="secondary-control"
+                  type="button"
+                  (click)="goBackToMenu()">
+                  Volver
+                </button>
+
+                <button
+                  class="unload-primary"
+                  type="button"
+                  (click)="restartUnload()">
+                  Sacar otra cosa
+                </button>
+
+              </div>
+
+            </div>
+
+          }
+
+        </div>
+
+        <span class="unload-privacy">
+          Lo que escribas aquí desaparece cuando salgas.
+        </span>
+
+      </section>
+
+    }
+
+    <!-- SOLTAR TENSIÓN -->
+
+    @if (mode() === 'release') {
+
+      <section class="exercise release">
+
+        <div class="exercise__heading">
+
+          <span>Soltar tensión</span>
+
+          <h1>Vamos a quitarle un poquito de peso al cuerpo.</h1>
+
+          <p>
+            A veces cargamos tensión sin darnos cuenta.
+            Vamos parte por parte.
+          </p>
+
+        </div>
+
+        @if (!releaseComplete()) {
+
+          <div
+            class="release-card"
+            [class.release-card--changing]="releaseChanging()">
+
+            <div class="release-card__top">
+
+              <span class="release-card__label">
+                {{ currentReleaseStep().label }}
+              </span>
+
+              <span class="release-card__progress">
+                {{ releaseProgress() }}
+              </span>
+
+            </div>
+
+            <div class="release-visual">
+
+              <div class="release-visual__circle">
+                <span>
+                  {{ currentReleaseStep().symbol }}
+                </span>
+              </div>
+
+            </div>
+
+            <div class="release-card__content">
+
+              <h2>
+                {{ currentReleaseStep().title }}
+              </h2>
+
+              <p>
+                {{ currentReleaseStep().text }}
+              </p>
+
+              <div class="release-instruction">
+                {{ currentReleaseStep().detail }}
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="release-actions">
+
+            @if (releaseIndex() === 0) {
+              <button
+                class="secondary-control"
+                type="button"
+                (click)="goBackToMenu()">
+                Volver
+              </button>
+            }
+
+            <button
+              class="release-next"
+              type="button"
+              [disabled]="releaseChanging()"
+              (click)="nextReleaseStep()">
+
+              @if (releaseIndex() < 4) {
+
+                <span>Listo</span>
+                <span>→</span>
+
+              } @else {
+
+                <span>Terminar</span>
+                <span>✦</span>
+
+              }
+
+            </button>
+
+          </div>
+
+        } @else {
+
+          <div
+            class="release-complete"
+            [class.release-complete--changing]="releaseChanging()">
+
+            <div class="release-complete__visual">
+              <span>✦</span>
+            </div>
+
+            <span class="release-complete__eyebrow">
+              Un poquito más ligero
+            </span>
+
+            <h2>
+              Eso era todo.
+            </h2>
+
+            <p>
+              No necesitabas quitar toda la tensión.
+              Con haber soltado un poquito ya hiciste algo por ti.
+            </p>
+
+            <span class="release-complete__note">
+              Quédate así unos segundos antes de volver.
+            </span>
+
+            <div class="release-complete__actions">
+
+              <button
+                class="secondary-control"
+                type="button"
+                (click)="goBackToMenu()">
+                Volver
+              </button>
+
+              <button
+                class="primary-control"
+                type="button"
+                (click)="restartRelease()">
+                Hacerlo otra vez
+              </button>
+
+            </div>
+
+          </div>
+
+        }
+
+      </section>
+
+    }
+
+  </div>
+</main>

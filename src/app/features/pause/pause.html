@@ -1,0 +1,828 @@
+<main class="pause">
+    <div class="pause__background"></div>
+
+    <div class="pause__container">
+
+        <header class="pause__header">
+
+            @if (isMenu()) {
+
+                <a
+                    routerLink="/home"
+                    class="back-button"
+                    aria-label="Volver al inicio">
+                    ←
+                </a>
+
+            } @else {
+
+                <button
+                    class="back-button"
+                    type="button"
+                    aria-label="Volver"
+                    (click)="goBackToMenu()">
+                    ←
+                </button>
+
+            }
+
+            <span class="pause__eyebrow">
+                Un pequeño descanso
+            </span>
+
+        </header>
+
+        <!-- =========================================
+             MENÚ
+        ========================================== -->
+
+        @if (isMenu()) {
+
+            <section class="pause__content">
+
+                <div class="pause__intro">
+
+                    <span class="pause__intro-label">
+                        Cinco minutos pueden ser suficientes
+                    </span>
+
+                    <h1>
+                        Vamos a salir de aquí un ratito.
+                    </h1>
+
+                    <p>
+                        Nada de trabajo por unos minutos.
+                        Elige algo pequeño y quédate aquí.
+                    </p>
+
+                </div>
+
+                <div class="pause__options">
+
+                    <button
+                        class="pause-card pause-card--primary"
+                        type="button"
+                        (click)="openOneMinute()">
+
+                        <span class="pause-card__icon">
+                            ◷
+                        </span>
+
+                        <span class="pause-card__content">
+                            <strong>Regálame un minuto</strong>
+                            <small>Sesenta segundos que no le debes a nadie</small>
+                        </span>
+
+                        <span class="pause-card__arrow">
+                            →
+                        </span>
+
+                    </button>
+
+                    <button
+                        class="pause-card"
+                        type="button"
+                        (click)="openMission()">
+
+                        <span class="pause-card__icon">
+                            ✦
+                        </span>
+
+                        <span class="pause-card__content">
+                            <strong>Haz algo distinto</strong>
+                            <small>Una pequeña misión para despejarte</small>
+                        </span>
+
+                        <span class="pause-card__arrow">
+                            →
+                        </span>
+
+                    </button>
+
+                    <button
+                        class="pause-card"
+                        type="button"
+                        (click)="openDistraction()">
+
+                        <span class="pause-card__icon">
+                            ◌
+                        </span>
+
+                        <span class="pause-card__content">
+                            <strong>Distráeme un momento</strong>
+                            <small>Algo pequeño para cambiar de canal</small>
+                        </span>
+
+                        <span class="pause-card__arrow">
+                            →
+                        </span>
+
+                    </button>
+
+                    <button
+                        class="pause-card"
+                        type="button"
+                        (click)="openBeautiful()">
+
+                        <span class="pause-card__icon">
+                            ☼
+                        </span>
+
+                        <span class="pause-card__content">
+                            <strong>Enséñame algo bonito</strong>
+                            <small>Solo algo agradable para mirar un momento</small>
+                        </span>
+
+                        <span class="pause-card__arrow">
+                            →
+                        </span>
+
+                    </button>
+
+                </div>
+
+                <a
+                    routerLink="/home"
+                    class="pause-menu-back">
+                    <span>←</span>
+                    <span>Volver</span>
+                </a>
+
+            </section>
+
+        }
+
+        <!-- =========================================
+             REGÁLAME UN MINUTO
+        ========================================== -->
+
+        @if (isOneMinute()) {
+
+            <section class="minute">
+
+                <div class="minute__heading">
+
+                    <span>
+                        Regálame un minuto
+                    </span>
+
+                    <h1>
+                        Este minuto es tuyo.
+                    </h1>
+
+                    <p>
+                        No tienes que aprovecharlo.
+                        Solo estar aquí.
+                    </p>
+
+                </div>
+
+                @if (!isComplete()) {
+
+                    <div class="minute__experience">
+
+                        <div
+                            class="minute-timer"
+                            [style.--progress.%]="minuteProgress()">
+
+                            <div class="minute-timer__pulse minute-timer__pulse--one"></div>
+                            <div class="minute-timer__pulse minute-timer__pulse--two"></div>
+                            <div class="minute-timer__pulse minute-timer__pulse--three"></div>
+
+                            <div class="minute-timer__ring">
+
+                                <div class="minute-timer__inside">
+
+                                    <span class="minute-timer__number">
+                                        {{ secondsLeft() }}
+                                    </span>
+
+                                    <span class="minute-timer__unit">
+                                        segundos
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="minute-message">
+
+                            <span class="minute-message__symbol">
+                                ✦
+                            </span>
+
+                            <p>
+                                {{ currentMinuteMessage() }}
+                            </p>
+
+                        </div>
+
+                        <div class="minute-controls">
+
+                            @if (!isRunning() && secondsLeft() === 60) {
+
+                                <button
+                                    class="secondary-control"
+                                    type="button"
+                                    (click)="goBackToMenu()">
+                                    Volver
+                                </button>
+
+                                <button
+                                    class="primary-control"
+                                    type="button"
+                                    (click)="startOneMinute()">
+                                    Empezar
+                                </button>
+
+                            }
+
+                            @if (!isRunning() && secondsLeft() < 60 && secondsLeft() > 0) {
+
+                                <button
+                                    class="primary-control"
+                                    type="button"
+                                    (click)="continueOneMinute()">
+                                    Continuar
+                                </button>
+
+                            }
+
+                            @if (isRunning()) {
+
+                                <button
+                                    class="primary-control"
+                                    type="button"
+                                    (click)="pauseOneMinute()">
+                                    Pausar
+                                </button>
+
+                            }
+
+                            @if (secondsLeft() < 60) {
+
+                                <button
+                                    class="secondary-control"
+                                    type="button"
+                                    (click)="finishOneMinute()">
+                                    Terminar
+                                </button>
+
+                            }
+
+                        </div>
+
+                    </div>
+
+                } @else {
+
+                    <div class="minute-complete">
+
+                        <div class="minute-complete__visual">
+                            <span>✦</span>
+                        </div>
+
+                        <span class="minute-complete__eyebrow">
+                            Un minuto después
+                        </span>
+
+                        <h2>
+                            Listo.
+                        </h2>
+
+                        <p>
+                            Ese minuto fue tuyo.
+                            No tenía que ser productivo ni servir para nada más.
+                        </p>
+
+                        <span class="minute-complete__note">
+                            A veces una pausa pequeña también cuenta.
+                        </span>
+
+                        <div class="minute-complete__controls">
+
+                            <button
+                                class="secondary-control"
+                                type="button"
+                                (click)="goBackToMenu()">
+                                Volver
+                            </button>
+
+                            <button
+                                class="primary-control"
+                                type="button"
+                                (click)="restartOneMinute()">
+                                Quiero otro minuto
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                }
+
+            </section>
+
+        }
+
+        <!-- =========================================
+             HAZ ALGO DISTINTO
+        ========================================== -->
+
+        @if (isMission()) {
+
+            <section class="mission">
+
+                <div class="mission__heading">
+
+                    <span>
+                        Haz algo distinto
+                    </span>
+
+                    <h1>
+                        Vamos a cambiar de canal un momento.
+                    </h1>
+
+                    <p>
+                        Nada complicado.
+                        Solo una cosa pequeña para romper un poquito la rutina.
+                    </p>
+
+                </div>
+
+                @if (currentMission()) {
+
+                    @if (!missionComplete()) {
+
+                        <div class="mission__experience">
+
+                            <div class="mission-card">
+
+                                <div class="mission-card__icon">
+                                    {{ currentMission()!.icon }}
+                                </div>
+
+                                <span class="mission-card__eyebrow">
+                                    Tu pequeña misión
+                                </span>
+
+                                <h2>
+                                    {{ currentMission()!.title }}
+                                </h2>
+
+                                <p>
+                                    {{ currentMission()!.description }}
+                                </p>
+
+                                <div class="mission-card__duration">
+
+                                    <span class="mission-card__duration-icon">
+                                        ◷
+                                    </span>
+
+                                    <span>
+                                        {{ currentMission()!.duration }}
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                            <div class="mission__controls">
+
+                                <button
+                                    class="secondary-control"
+                                    type="button"
+                                    (click)="goBackToMenu()">
+                                    Volver
+                                </button>
+
+                                <button
+                                    class="primary-control"
+                                    type="button"
+                                    (click)="completeMission()">
+                                    Ya lo hice
+                                </button>
+
+                                <button
+                                    class="secondary-control"
+                                    type="button"
+                                    (click)="tryAnotherMission()">
+                                    Dame otra
+                                </button>
+
+                            </div>
+
+                            <span class="mission__note">
+                                Y si esta no te apetece, puedes pedir otra.
+                                Aquí no hay tareas obligatorias.
+                            </span>
+
+                        </div>
+
+                    } @else {
+
+                        <div class="mission-complete">
+
+                            <div class="mission-complete__visual">
+                                <span>✦</span>
+                            </div>
+
+                            <span class="mission-complete__eyebrow">
+                                Misión cumplida
+                            </span>
+
+                            <h2>
+                                Listo.
+                            </h2>
+
+                            <p>
+                                {{ missionCompleteMessage() }}
+                            </p>
+
+                            <span class="mission-complete__note">
+                                No tenía que ser algo grande para contar.
+                            </span>
+
+                            <div class="mission-complete__controls">
+
+                                <button
+                                    class="primary-control"
+                                    type="button"
+                                    (click)="tryAnotherMission()">
+                                    Quiero otra
+                                </button>
+
+                                <button
+                                    class="secondary-control"
+                                    type="button"
+                                    (click)="goBackToMenu()">
+                                    Volver
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    }
+
+                }
+
+            </section>
+
+        }
+
+        <!-- =========================================
+             DISTRÁEME UN MOMENTO
+        ========================================== -->
+
+        @if (isDistraction()) {
+
+            <section class="distraction">
+
+                <div class="distraction__heading">
+
+                    <span>
+                        Distráeme un momento
+                    </span>
+
+                    <h1>
+                        Pensemos en cualquier otra cosa.
+                    </h1>
+
+                    <p>
+                        No tienes que resolver nada.
+                        Solo deja que tu cabeza se vaya por otro lado un ratito.
+                    </p>
+
+                </div>
+
+                @if (currentDistraction()) {
+
+                    @if (!distractionComplete()) {
+
+                        <div class="distraction__experience">
+
+                            <div class="distraction-card">
+
+                                <div class="distraction-card__top">
+
+                                    <div class="distraction-card__icon">
+                                        {{ currentDistraction()!.icon }}
+                                    </div>
+
+                                    <span class="distraction-card__category">
+                                        {{ currentDistraction()!.category }}
+                                    </span>
+
+                                </div>
+
+                                <h2>
+                                    {{ currentDistraction()!.title }}
+                                </h2>
+
+                                <p>
+                                    {{ currentDistraction()!.text }}
+                                </p>
+
+                                <div class="distraction-card__decoration">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+
+                            </div>
+
+                            <div class="distraction__controls">
+
+                                <button
+                                    class="secondary-control"
+                                    type="button"
+                                    (click)="goBackToMenu()">
+                                    Volver
+                                </button>
+
+                                <button
+                                    class="primary-control"
+                                    type="button"
+                                    (click)="tryAnotherDistraction()">
+                                    Otra
+                                </button>
+
+                                <button
+                                    class="secondary-control"
+                                    type="button"
+                                    (click)="completeDistraction()">
+                                    Listo
+                                </button>
+
+                            </div>
+
+                            <span class="distraction__note">
+                                No hay respuestas correctas.
+                                Ni siquiera tienes que responder si no quieres.
+                            </span>
+
+                        </div>
+
+                    } @else {
+
+                        <div class="distraction-complete">
+
+                            <div class="distraction-complete__visual">
+                                <span>◌</span>
+                            </div>
+
+                            <span class="distraction-complete__eyebrow">
+                                Cambio de canal
+                            </span>
+
+                            <h2>
+                                Ya está.
+                            </h2>
+
+                            <p>
+                                {{ distractionCompleteMessage() }}
+                            </p>
+
+                            <span class="distraction-complete__note">
+                                Puedes quedarte un poquito más si todavía no quieres volver.
+                            </span>
+
+                            <div class="distraction-complete__controls">
+
+                                <button
+                                    class="primary-control"
+                                    type="button"
+                                    (click)="tryAnotherDistraction()">
+                                    Distráeme otra vez
+                                </button>
+
+                                <button
+                                    class="secondary-control"
+                                    type="button"
+                                    (click)="goBackToMenu()">
+                                    Volver
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    }
+
+                }
+
+            </section>
+
+        }
+
+        <!-- =========================================
+             ENSÉÑAME ALGO BONITO
+        ========================================== -->
+
+        @if (isBeautiful()) {
+
+            <section class="beautiful">
+
+                <div class="beautiful__heading">
+
+                    <span>
+                        Enséñame algo bonito
+                    </span>
+
+                    <h1>
+                        Solo mira un momento.
+                    </h1>
+
+                    <p>
+                        No tienes que encontrar una respuesta.
+                        Solo deja que tus ojos se queden aquí un ratito.
+                    </p>
+
+                </div>
+
+                @if (currentBeautiful()) {
+
+                    <div class="beautiful__experience">
+
+                        <div class="beautiful-preview">
+
+                            <img
+                                class="beautiful-preview__image"
+                                [src]="currentBeautiful()!.image"
+                                [alt]="currentBeautiful()!.alt"
+                                [style.object-position]="currentBeautiful()!.objectPosition ?? 'center'"
+                                draggable="false" />
+
+                            <span class="beautiful-preview__hint">
+                                Solo mira
+                            </span>
+
+                        </div>
+
+                        <div class="beautiful__controls">
+
+                            <button
+                                class="secondary-control"
+                                type="button"
+                                (click)="goBackToMenu()">
+                                Volver
+                            </button>
+
+                            <button
+                                class="primary-control"
+                                type="button"
+                                (click)="stayWithBeautiful()">
+                                Me quedo aquí
+                            </button>
+
+                            <button
+                                class="secondary-control"
+                                type="button"
+                                (click)="showAnotherBeautiful()">
+                                Muéstrame otra
+                            </button>
+
+                        </div>
+
+                        <span class="beautiful__note">
+                            Si una foto te gusta, toca “Me quedo aquí”: se abrirá en grande y te diré qué detalles observar.
+                        </span>
+
+                    </div>
+
+                    @if (beautifulSettled()) {
+
+                        <div
+                            class="beautiful-immersive"
+                            role="dialog"
+                            aria-modal="true"
+                            aria-label="Vista inmersiva de la fotografía">
+
+                            <div class="beautiful-immersive__backdrop" aria-hidden="true">
+                                <img
+                                    [src]="currentBeautiful()!.image"
+                                    alt=""
+                                    draggable="false" />
+                            </div>
+
+                            <div class="beautiful-immersive__topbar">
+
+                                <button
+                                    class="beautiful-immersive__back"
+                                    type="button"
+                                    (click)="leaveBeautifulSettled()"
+                                    aria-label="Cerrar vista inmersiva">
+                                    ←
+                                </button>
+
+                                <span>
+                                    Quédate aquí
+                                </span>
+
+
+
+                            </div>
+
+                            <div
+                                class="beautiful-immersive__stage"
+                                [class.beautiful-immersive__stage--dragging]="beautifulDragging()"
+                                (wheel)="onBeautifulWheel($event)"
+                                (pointerdown)="onBeautifulPointerDown($event)"
+                                (pointermove)="onBeautifulPointerMove($event)"
+                                (pointerup)="onBeautifulPointerUp($event)"
+                                (pointercancel)="onBeautifulPointerUp($event)">
+
+                                <img
+                                    class="beautiful-immersive__image"
+                                    [src]="currentBeautiful()!.image"
+                                    [alt]="currentBeautiful()!.alt"
+                                    [style.transform]="beautifulTransform()"
+                                    draggable="false" />
+
+                            </div>
+
+                            @if (beautifulTextVisible()) {
+
+                                <div class="beautiful-immersive__copy">
+
+                                    <span>
+                                        {{ currentBeautiful()!.label }}
+                                    </span>
+
+                                    <h2>
+                                        {{ currentBeautiful()!.title }}
+                                    </h2>
+
+                                    <p>
+                                        {{ currentBeautiful()!.message }}
+                                    </p>
+
+                                    <small>
+                                        {{ currentBeautiful()!.closingMessage }}
+                                    </small>
+
+                                </div>
+
+                            }
+
+                            <div class="beautiful-immersive__toolbar">
+
+                                <button
+                                    type="button"
+                                    (click)="zoomBeautifulOut()"
+                                    [disabled]="beautifulScale() <= 1"
+                                    aria-label="Alejar imagen">
+                                    −
+                                </button>
+
+                                <button
+                                    class="beautiful-immersive__reset"
+                                    type="button"
+                                    (click)="resetBeautifulZoom()">
+                                    {{ beautifulScale() === 1 ? 'Explorar' : 'Restablecer' }}
+                                </button>
+
+                                <button
+                                    type="button"
+                                    (click)="zoomBeautifulIn()"
+                                    [disabled]="beautifulScale() >= 3"
+                                    aria-label="Acercar imagen">
+                                    +
+                                </button>
+
+                                <button
+                                    class="beautiful-immersive__back-toolbar"
+                                    type="button"
+                                    (click)="leaveBeautifulSettled()">
+                                    Volver
+                                </button>
+
+                                <button
+                                    class="beautiful-immersive__text-toggle beautiful-immersive__text-toggle--toolbar"
+                                    type="button"
+                                    (click)="toggleBeautifulText()">
+                                    {{ beautifulTextVisible() ? 'Ver solo la foto' : 'Ver texto' }}
+                                </button>
+
+                            </div>
+
+                            <span class="beautiful-immersive__gesture-note">
+                                {{ beautifulScale() > 1 ? 'Arrastra la foto para recorrerla.' : 'Acércala y recórrela con calma.' }}
+                            </span>
+
+                        </div>
+
+                    }
+
+                }
+
+            </section>
+
+        }
+
+    </div>
+</main>

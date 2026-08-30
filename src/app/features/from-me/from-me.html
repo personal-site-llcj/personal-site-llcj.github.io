@@ -1,0 +1,119 @@
+<main class="from-me">
+
+  <div class="from-me__background"></div>
+
+
+  <div class="from-me__container">
+
+
+    <header class="from-me__header">
+
+      <a routerLink="/home" class="back-button" aria-label="Volver al inicio">
+        ←
+      </a>
+
+    </header>
+
+
+
+    <section class="from-me__content">
+
+
+      @if (!showNote()) {
+
+      <div class="from-me__intro">
+
+        <span class="from-me__symbol">
+          ✦
+        </span>
+
+
+        <h1>
+          Algo de mi parte
+        </h1>
+
+
+        @if (availableToday()) {
+
+        <button class="from-me__button" type="button" (click)="readNote()">
+
+          Leer mi nota
+
+        </button>
+
+        } @else {
+
+        <a routerLink="/home" class="from-me__button">
+
+          Vuelve mañana
+
+        </a>
+
+        }
+
+
+        @if (alreadyReadMessage()) {
+
+        <p class="from-me__message">
+
+          Hoy ya leíste una nota.
+          <br>
+          Vuelve mañana, habrá otra esperándote.
+
+        </p>
+
+        }
+
+
+      </div>
+
+
+      } @else {
+
+
+      <div class="note-card-wrapper">
+
+        <span class="note-card__symbol">
+          ✦
+        </span>
+
+
+        <article class="note-card">
+
+
+          <p class="note-card__text">
+            {{ currentNote()?.text }}
+          </p>
+
+
+          <span class="note-card__signature">
+            Atte. — {{ currentNote()?.signature }}
+          </span>
+
+
+        </article>
+
+      </div>
+
+
+      }
+
+
+
+      @if (showNote()) {
+
+      <a routerLink="/home" class="from-me__back">
+
+        Volver
+
+      </a>
+
+      }
+
+
+    </section>
+
+
+  </div>
+
+</main>

@@ -1,0 +1,1099 @@
+{
+  "stay": [
+    {
+      "id": 1,
+      "text": "Está bien. Quédate aquí conmigo.",
+      "category": "arrival"
+    },
+    {
+      "id": 2,
+      "text": "Llegaste. Por ahora, eso es suficiente.",
+      "category": "arrival"
+    },
+    {
+      "id": 3,
+      "text": "No tienes que decir nada. Puedes simplemente quedarte aquí.",
+      "category": "arrival"
+    },
+    {
+      "id": 4,
+      "text": "Ven. Hagamos que todo se quede afuera por un momento.",
+      "category": "arrival"
+    },
+    {
+      "id": 5,
+      "text": "No necesitas saber qué necesitas. Quédate un ratito.",
+      "category": "arrival"
+    },
+    {
+      "id": 6,
+      "text": "Por unos minutos, no tienes que ir a ningún lado.",
+      "category": "arrival"
+    },
+    {
+      "id": 7,
+      "text": "Aquí no tienes que empezar explicando cómo te sientes.",
+      "category": "arrival"
+    },
+    {
+      "id": 8,
+      "text": "Puedes llegar cansada, confundida, tranquila o como sea que estés.",
+      "category": "arrival"
+    },
+    {
+      "id": 9,
+      "text": "No importa cómo haya sido el día. Aquí tienes un lugar.",
+      "category": "arrival"
+    },
+    {
+      "id": 10,
+      "text": "Hazte un poquito de espacio aquí. Lo demás puede esperar.",
+      "category": "arrival"
+    },
+    {
+      "id": 11,
+      "text": "Está bien venir aquí sin saber qué decir.",
+      "category": "arrival"
+    },
+    {
+      "id": 12,
+      "text": "Qué bueno que viniste. Quédate todo lo que quieras.",
+      "category": "arrival"
+    },
+    {
+      "id": 13,
+      "text": "No tienes que estar bien para estar aquí.",
+      "category": "permission"
+    },
+    {
+      "id": 14,
+      "text": "No tienes que hacer nada con este momento.",
+      "category": "permission"
+    },
+    {
+      "id": 15,
+      "text": "Puedes simplemente existir un ratito.",
+      "category": "permission"
+    },
+    {
+      "id": 16,
+      "text": "No tienes que aprovechar estos minutos para nada.",
+      "category": "permission"
+    },
+    {
+      "id": 17,
+      "text": "No hay una manera correcta de sentirte ahora.",
+      "category": "permission"
+    },
+    {
+      "id": 18,
+      "text": "Si hoy estás cansada, puedes estar cansada.",
+      "category": "permission"
+    },
+    {
+      "id": 19,
+      "text": "No necesitas encontrar las palabras correctas.",
+      "category": "permission"
+    },
+    {
+      "id": 20,
+      "text": "Puedes bajar la guardia un poquito aquí.",
+      "category": "permission"
+    },
+    {
+      "id": 21,
+      "text": "No tienes que demostrarle nada a nadie durante estos minutos.",
+      "category": "permission"
+    },
+    {
+      "id": 22,
+      "text": "Si quieres cerrar los ojos un momento, hazlo. Si no, quédate así.",
+      "category": "permission"
+    },
+    {
+      "id": 23,
+      "text": "No tienes que sentirte diferente cuando esto termine.",
+      "category": "permission"
+    },
+    {
+      "id": 24,
+      "text": "Puedes tomarte tu tiempo. Aquí no hay prisa.",
+      "category": "permission"
+    },
+    {
+      "id": 25,
+      "text": "No necesitas convertir este momento en algo productivo.",
+      "category": "permission"
+    },
+    {
+      "id": 26,
+      "text": "Por ahora, estar aquí ya es suficiente.",
+      "category": "permission"
+    },
+    {
+      "id": 27,
+      "text": "Eso que tienes pendiente puede esperar unos minutos.",
+      "category": "release"
+    },
+    {
+      "id": 28,
+      "text": "No tienes que resolver nada ahora.",
+      "category": "release"
+    },
+    {
+      "id": 29,
+      "text": "Lo que falta por hacer seguirá ahí después.",
+      "category": "release"
+    },
+    {
+      "id": 30,
+      "text": "Por estos minutos, deja que el mundo siga sin pedirte nada.",
+      "category": "release"
+    },
+    {
+      "id": 31,
+      "text": "Una cosa a la vez. Y ahora mismo, ninguna.",
+      "category": "release"
+    },
+    {
+      "id": 32,
+      "text": "Lo de mañana puede quedarse en mañana.",
+      "category": "release"
+    },
+    {
+      "id": 33,
+      "text": "No tienes que contestarle a nadie ahora.",
+      "category": "release"
+    },
+    {
+      "id": 34,
+      "text": "Puedes soltar los hombros un poquito.",
+      "category": "release"
+    },
+    {
+      "id": 35,
+      "text": "Deja que tu cabeza haga un poquito menos de ruido.",
+      "category": "release"
+    },
+    {
+      "id": 36,
+      "text": "No tienes que cargar todo al mismo tiempo.",
+      "category": "release"
+    },
+    {
+      "id": 37,
+      "text": "Si hoy todo se sintió demasiado, aquí puedes soltar un poquito.",
+      "category": "release"
+    },
+    {
+      "id": 38,
+      "text": "No hace falta resolver hoy todo lo que apareció hoy.",
+      "category": "release"
+    },
+    {
+      "id": 39,
+      "text": "Todo puede quedarse afuera durante este ratito.",
+      "category": "release"
+    },
+    {
+      "id": 40,
+      "text": "No estás perdiendo el tiempo por detenerte.",
+      "category": "release"
+    },
+    {
+      "id": 41,
+      "text": "Por un momento, deja de pensar en lo siguiente.",
+      "category": "release"
+    },
+    {
+      "id": 42,
+      "text": "Lo urgente puede esperar unos minutos mientras tú vuelves a ti.",
+      "category": "release"
+    },
+    {
+      "id": 43,
+      "text": "No voy a pedirte nada. Solo quiero hacerte un poquito de compañía.",
+      "category": "company"
+    },
+    {
+      "id": 44,
+      "text": "Puedes quedarte en silencio. Yo sigo aquí.",
+      "category": "company"
+    },
+    {
+      "id": 45,
+      "text": "No necesitas explicarme por qué llegaste hasta aquí.",
+      "category": "company"
+    },
+    {
+      "id": 46,
+      "text": "Quédate. No tenemos que llenar este momento con nada.",
+      "category": "company"
+    },
+    {
+      "id": 47,
+      "text": "No tienes que pasar este ratito sola.",
+      "category": "company"
+    },
+    {
+      "id": 48,
+      "text": "Puedes descansar un poquito aquí. Yo me quedo.",
+      "category": "company"
+    },
+    {
+      "id": 49,
+      "text": "Si necesitas unos minutos más, tenemos unos minutos más.",
+      "category": "company"
+    },
+    {
+      "id": 50,
+      "text": "No tienes que hablar para que alguien se quede contigo.",
+      "category": "company"
+    },
+    {
+      "id": 51,
+      "text": "No me he ido. Puedes seguir aquí.",
+      "category": "company"
+    },
+    {
+      "id": 52,
+      "text": "No hace falta arreglar este momento. Podemos simplemente compartirlo.",
+      "category": "company"
+    },
+    {
+      "id": 53,
+      "text": "Si hoy necesitas compañía más que respuestas, aquí estoy.",
+      "category": "company"
+    },
+    {
+      "id": 54,
+      "text": "Puedes quedarte conmigo otro poquito.",
+      "category": "company"
+    },
+    {
+      "id": 55,
+      "text": "No importa si no sabes qué decir. No vine a pedirte explicaciones.",
+      "category": "company"
+    },
+    {
+      "id": 56,
+      "text": "Aunque sea desde aquí, quiero que tengas un lugar donde no estés sola con todo.",
+      "category": "company"
+    },
+    {
+      "id": 57,
+      "text": "Este ratito es tuyo. Yo solamente te hago compañía.",
+      "category": "company"
+    },
+    {
+      "id": 58,
+      "text": "No necesitas llenar el silencio. También puedo acompañarte así.",
+      "category": "company"
+    },
+    {
+      "id": 59,
+      "text": "Cuando quieras volver, hazlo despacio.",
+      "category": "closing"
+    },
+    {
+      "id": 60,
+      "text": "No hay prisa por regresar. Puedes quedarte otro ratito.",
+      "category": "closing"
+    },
+    {
+      "id": 61,
+      "text": "Cuando estés lista, seguimos. Y si todavía no, esperamos.",
+      "category": "closing"
+    },
+    {
+      "id": 62,
+      "text": "Con que este momento haya pesado un poquito menos, basta.",
+      "category": "closing"
+    },
+    {
+      "id": 63,
+      "text": "No tienes que volver a tu día cargándolo todo de golpe.",
+      "category": "closing"
+    },
+    {
+      "id": 64,
+      "text": "Puedes llevarte solo lo que puedas con ahora. Lo demás puede esperar.",
+      "category": "closing"
+    },
+    {
+      "id": 65,
+      "text": "Si necesitas quedarte un poco más, yo todavía estoy aquí.",
+      "category": "closing"
+    },
+    {
+      "id": 66,
+      "text": "No hace falta salir de aquí sintiéndote increíble. Un poquito más tranquila ya cuenta.",
+      "category": "closing"
+    },
+    {
+      "id": 67,
+      "text": "Cuando regreses, hazlo a tu ritmo.",
+      "category": "closing"
+    },
+    {
+      "id": 68,
+      "text": "Puedes volver cuando quieras. Este lugar seguirá aquí.",
+      "category": "closing"
+    },
+    {
+      "id": 69,
+      "text": "No tienes que apresurarte. Este ratito todavía es tuyo.",
+      "category": "closing"
+    },
+    {
+      "id": 70,
+      "text": "Y si hoy necesitas volver más tarde, aquí voy a seguir.",
+      "category": "closing"
+    },
+    {
+      "id": 71,
+      "text": "Ven, quédate aquí un momento. No tienes que traer nada más contigo.",
+      "category": "arrival"
+    },
+    {
+      "id": 72,
+      "text": "Puedes dejar el día en la puerta durante unos minutos.",
+      "category": "arrival"
+    },
+    {
+      "id": 73,
+      "text": "No importa qué estaba pasando antes de llegar aquí. Ahora solo estás aquí.",
+      "category": "arrival"
+    },
+    {
+      "id": 74,
+      "text": "Haz una pausa aquí conmigo. No tienes que saber cuánto tiempo.",
+      "category": "arrival"
+    },
+    {
+      "id": 75,
+      "text": "Si viniste buscando un ratito lejos de todo, lo encontraste.",
+      "category": "arrival"
+    },
+    {
+      "id": 76,
+      "text": "Puedes llegar exactamente como estás. No tienes que cambiar nada primero.",
+      "category": "arrival"
+    },
+    {
+      "id": 77,
+      "text": "No tienes que ordenar tus pensamientos antes de entrar aquí.",
+      "category": "arrival"
+    },
+    {
+      "id": 78,
+      "text": "Por un momento, deja que este sea el único lugar donde tienes que estar.",
+      "category": "arrival"
+    },
+    {
+      "id": 79,
+      "text": "Si necesitabas alejarte un poquito de todo, quédate.",
+      "category": "arrival"
+    },
+    {
+      "id": 80,
+      "text": "No hace falta una razón especial para venir aquí.",
+      "category": "arrival"
+    },
+    {
+      "id": 81,
+      "text": "Sea lo que sea que traigas en la cabeza, puede sentarse aquí contigo.",
+      "category": "arrival"
+    },
+    {
+      "id": 82,
+      "text": "Ya estás aquí. Ahora podemos ir un poquito más despacio.",
+      "category": "arrival"
+    },
+    {
+      "id": 83,
+      "text": "No tienes que tener todo bajo control para descansar un momento.",
+      "category": "permission"
+    },
+    {
+      "id": 84,
+      "text": "Puedes dejar pendiente hasta la idea de sentirte mejor.",
+      "category": "permission"
+    },
+    {
+      "id": 85,
+      "text": "No tienes que encontrarle sentido a todo hoy.",
+      "category": "permission"
+    },
+    {
+      "id": 86,
+      "text": "No hace falta que seas fuerte durante cada minuto del día.",
+      "category": "permission"
+    },
+    {
+      "id": 87,
+      "text": "Puedes darte permiso de no saber qué hacer después.",
+      "category": "permission"
+    },
+    {
+      "id": 88,
+      "text": "No necesitas justificar por qué necesitas detenerte.",
+      "category": "permission"
+    },
+    {
+      "id": 89,
+      "text": "Está bien si hoy simplemente no tienes ganas de poder con más cosas.",
+      "category": "permission"
+    },
+    {
+      "id": 90,
+      "text": "No tienes que verte tranquila para poder tomarte un descanso.",
+      "category": "permission"
+    },
+    {
+      "id": 91,
+      "text": "Puedes sentir varias cosas al mismo tiempo. No tienes que ordenarlas ahora.",
+      "category": "permission"
+    },
+    {
+      "id": 92,
+      "text": "No tienes que convertir cada momento difícil en una lección.",
+      "category": "permission"
+    },
+    {
+      "id": 93,
+      "text": "También puedes tener un día en el que simplemente necesites parar.",
+      "category": "permission"
+    },
+    {
+      "id": 94,
+      "text": "Aquí puedes dejar de intentar hacerlo todo bien por un momento.",
+      "category": "permission"
+    },
+    {
+      "id": 95,
+      "text": "Si tu cabeza sigue corriendo, tú no tienes que correr con ella.",
+      "category": "release"
+    },
+    {
+      "id": 96,
+      "text": "No hace falta pensar ahora en todo lo que todavía falta.",
+      "category": "release"
+    },
+    {
+      "id": 97,
+      "text": "Puedes dejar una parte del peso para después.",
+      "category": "release"
+    },
+    {
+      "id": 98,
+      "text": "No todo merece una respuesta inmediata.",
+      "category": "release"
+    },
+    {
+      "id": 99,
+      "text": "No tienes que resolver en cinco minutos lo que te ha pesado todo el día.",
+      "category": "release"
+    },
+    {
+      "id": 100,
+      "text": "Por ahora, deja que algunas cosas simplemente queden pendientes.",
+      "category": "release"
+    },
+    {
+      "id": 101,
+      "text": "Tu lista puede esperar. Este ratito no está en ella.",
+      "category": "release"
+    },
+    {
+      "id": 102,
+      "text": "No hace falta repasar mentalmente todo lo que salió mal.",
+      "category": "release"
+    },
+    {
+      "id": 103,
+      "text": "Eso que todavía no sabes cómo solucionar puede quedarse sin solución unos minutos.",
+      "category": "release"
+    },
+    {
+      "id": 104,
+      "text": "No necesitas adelantarte a lo que todavía ni siquiera ha pasado.",
+      "category": "release"
+    },
+    {
+      "id": 105,
+      "text": "Puedes dejar de sostener algunas cosas aunque sea solo por este momento.",
+      "category": "release"
+    },
+    {
+      "id": 106,
+      "text": "No intentes acomodarlo todo ahora. Deja que algunas cosas estén desordenadas.",
+      "category": "release"
+    },
+    {
+      "id": 107,
+      "text": "No voy a llenar este silencio si no hace falta.",
+      "category": "company"
+    },
+    {
+      "id": 108,
+      "text": "Puedes quedarte aquí sin tener nada que contarme.",
+      "category": "company"
+    },
+    {
+      "id": 109,
+      "text": "Por un rato, deja que alguien más sostenga el silencio contigo.",
+      "category": "company"
+    },
+    {
+      "id": 110,
+      "text": "No necesitas decirme que estás bien para que me quede.",
+      "category": "company"
+    },
+    {
+      "id": 111,
+      "text": "Si no quieres pensar en nada, entonces no pensemos en nada.",
+      "category": "company"
+    },
+    {
+      "id": 112,
+      "text": "No tienes que hacer que este momento sea interesante. Podemos simplemente estar.",
+      "category": "company"
+    },
+    {
+      "id": 113,
+      "text": "Si hoy no quieres respuestas, no voy a darte respuestas.",
+      "category": "company"
+    },
+    {
+      "id": 114,
+      "text": "Puedes quedarte aunque no sepas exactamente qué estabas buscando.",
+      "category": "company"
+    },
+    {
+      "id": 115,
+      "text": "No tienes que mantener una conversación. La compañía también puede ser silencio.",
+      "category": "company"
+    },
+    {
+      "id": 116,
+      "text": "Si necesitas sentir que alguien está de tu lado por un momento, aquí estoy.",
+      "category": "company"
+    },
+    {
+      "id": 117,
+      "text": "No hace falta que estés pasando por algo enorme para querer un poco de compañía.",
+      "category": "company"
+    },
+    {
+      "id": 118,
+      "text": "Puedes dejar de sostener la conversación, el día y todo lo demás. Yo me quedo aquí.",
+      "category": "company"
+    },
+    {
+      "id": 119,
+      "text": "No tienes que irte todavía solo porque ya pasaron unos minutos.",
+      "category": "closing"
+    },
+    {
+      "id": 120,
+      "text": "Si te sientes igual que cuando llegaste, también está bien.",
+      "category": "closing"
+    },
+    {
+      "id": 121,
+      "text": "Quizá no solucionamos nada. Tampoco era necesario.",
+      "category": "closing"
+    },
+    {
+      "id": 122,
+      "text": "Cuando salgas de aquí, empieza por una sola cosa. No por todas.",
+      "category": "closing"
+    },
+    {
+      "id": 123,
+      "text": "Puedes regresar a tu día despacito.",
+      "category": "closing"
+    },
+    {
+      "id": 124,
+      "text": "Si todavía necesitas silencio, quédate un poquito más.",
+      "category": "closing"
+    },
+    {
+      "id": 125,
+      "text": "No tienes que recuperar de golpe toda la energía que te faltaba.",
+      "category": "closing"
+    },
+    {
+      "id": 126,
+      "text": "Lo que venga después puede empezar cuando estés lista.",
+      "category": "closing"
+    },
+    {
+      "id": 127,
+      "text": "Si más tarde vuelves a necesitar este lugar, vuelve.",
+      "category": "closing"
+    },
+    {
+      "id": 128,
+      "text": "No importa cuántas veces necesites regresar.",
+      "category": "closing"
+    },
+    {
+      "id": 129,
+      "text": "Este ratito puede terminar sin que tengas que sacar ninguna conclusión de él.",
+      "category": "closing"
+    },
+    {
+      "id": 130,
+      "text": "Cuando quieras levantarte de aquí, hazlo sin exigirte sentirte mejor de inmediato.",
+      "category": "closing"
+    }
+  ],
+  "hear": [
+    {
+      "id": 1,
+      "text": "Que hoy dudes de ti no significa que tengas menos razones para confiar en ti.",
+      "category": "self-doubt"
+    },
+    {
+      "id": 2,
+      "text": "No necesitas sentirte segura todo el tiempo para seguir siendo muy capaz.",
+      "category": "self-doubt"
+    },
+    {
+      "id": 3,
+      "text": "Un momento de duda no borra todo lo que ya has demostrado que puedes hacer.",
+      "category": "self-doubt"
+    },
+    {
+      "id": 4,
+      "text": "Hay días en los que cuesta ver lo que una hace bien. Eso no significa que haya dejado de estar ahí.",
+      "category": "self-doubt"
+    },
+    {
+      "id": 5,
+      "text": "No tienes que tener todas las respuestas para estar haciendo un buen trabajo.",
+      "category": "self-doubt"
+    },
+    {
+      "id": 6,
+      "text": "Que algo te esté costando no cambia lo buena que eres en lo que haces.",
+      "category": "self-doubt"
+    },
+    {
+      "id": 7,
+      "text": "No confundas estar cansada con no ser capaz. Son cosas muy distintas.",
+      "category": "self-doubt"
+    },
+    {
+      "id": 8,
+      "text": "Si hoy tú no puedes ver todo lo bueno que hay en ti, por un ratito puedes confiar en que yo sí lo veo.",
+      "category": "self-doubt"
+    },
+    {
+      "id": 9,
+      "text": "No necesitas demostrar todos los días que mereces el lugar que tienes. Ya has hecho mucho para llegar hasta ahí.",
+      "category": "self-doubt"
+    },
+    {
+      "id": 10,
+      "text": "Puedes no saber qué hacer con algo y seguir siendo una persona en la que se puede confiar.",
+      "category": "self-doubt"
+    },
+    {
+      "id": 11,
+      "text": "No midas todo lo que hiciste hoy solamente por lo que quedó pendiente. También cuenta todo lo que sí sacaste adelante.",
+      "category": "enough"
+    },
+    {
+      "id": 12,
+      "text": "Que todavía queden cosas por hacer no significa que hoy hayas hecho poco.",
+      "category": "enough"
+    },
+    {
+      "id": 13,
+      "text": "No necesitas terminarlo todo para que tu esfuerzo de hoy haya valido.",
+      "category": "enough"
+    },
+    {
+      "id": 14,
+      "text": "A veces haces tanto que lo terminado empieza a parecerte normal. No lo es. También cuenta.",
+      "category": "enough"
+    },
+    {
+      "id": 15,
+      "text": "No todo lo importante se ve en una lista de pendientes tachados.",
+      "category": "enough"
+    },
+    {
+      "id": 16,
+      "text": "Si hoy hiciste lo que pudiste con la energía que tenías, eso ya merece un poco de consideración contigo misma.",
+      "category": "enough"
+    },
+    {
+      "id": 17,
+      "text": "No tienes que cerrar el día con todo resuelto para poder decir que hiciste suficiente.",
+      "category": "enough"
+    },
+    {
+      "id": 18,
+      "text": "No necesito que hoy hayas podido con todo para seguir pensando que eres increíblemente capaz.",
+      "category": "enough"
+    },
+    {
+      "id": 19,
+      "text": "No le quites valor a lo que hiciste solo porque todavía falta algo más.",
+      "category": "enough"
+    },
+    {
+      "id": 20,
+      "text": "También cuenta todo lo que resolviste mientras nadie estaba mirando.",
+      "category": "enough"
+    },
+    {
+      "id": 21,
+      "text": "Estar cansada no significa que estés fallando. A veces solamente significa que llevas mucho tiempo sosteniendo demasiado.",
+      "category": "tired"
+    },
+    {
+      "id": 22,
+      "text": "Puedes necesitar descanso incluso si todavía hay cosas importantes pendientes.",
+      "category": "tired"
+    },
+    {
+      "id": 23,
+      "text": "No tienes que ganarte el derecho a descansar terminándolo todo primero.",
+      "category": "tired"
+    },
+    {
+      "id": 24,
+      "text": "Si hoy tu energía llegó hasta aquí, no tienes que pelearte con ella.",
+      "category": "tired"
+    },
+    {
+      "id": 25,
+      "text": "Tu cansancio también merece que lo escuches un poquito.",
+      "category": "tired"
+    },
+    {
+      "id": 26,
+      "text": "No pasa nada si hoy necesitas ir más despacio de lo que te gustaría.",
+      "category": "tired"
+    },
+    {
+      "id": 27,
+      "text": "Hay días para avanzar mucho y días para simplemente llegar al final. Los dos cuentan.",
+      "category": "tired"
+    },
+    {
+      "id": 28,
+      "text": "No tienes que convertir el cansancio en otra cosa por la que exigirte.",
+      "category": "tired"
+    },
+    {
+      "id": 29,
+      "text": "Si llevas mucho encima, tiene sentido que hoy te sientas cansada.",
+      "category": "tired"
+    },
+    {
+      "id": 30,
+      "text": "Descansar un poco no le quita nada a todo lo que ya hiciste.",
+      "category": "tired"
+    },
+    {
+      "id": 31,
+      "text": "No tienes que cargar con cada problema como si dependiera solamente de ti.",
+      "category": "pressure"
+    },
+    {
+      "id": 32,
+      "text": "Que algo sea importante no significa que tenga que vivir todo el día dentro de tu cabeza.",
+      "category": "pressure"
+    },
+    {
+      "id": 33,
+      "text": "Sé que cuando algo depende de ti haces hasta lo imposible por sacarlo adelante. Solo no olvides que tú también importas en medio de todo eso.",
+      "category": "pressure"
+    },
+    {
+      "id": 34,
+      "text": "No todo merece la misma cantidad de tu energía.",
+      "category": "pressure"
+    },
+    {
+      "id": 35,
+      "text": "Puedes ocuparte de algo sin tener que cargarlo contigo cada minuto.",
+      "category": "pressure"
+    },
+    {
+      "id": 36,
+      "text": "No tienes que adelantarte a todos los problemas posibles para estar preparada.",
+      "category": "pressure"
+    },
+    {
+      "id": 37,
+      "text": "Si hoy sientes que todo te está cayendo al mismo tiempo, empieza por recordar que no todo tiene que resolverse al mismo tiempo.",
+      "category": "pressure"
+    },
+    {
+      "id": 38,
+      "text": "Hay responsabilidades que son tuyas y otras que solamente terminaste cargando. No son lo mismo.",
+      "category": "pressure"
+    },
+    {
+      "id": 39,
+      "text": "No necesitas sostener perfectamente cada cosa para que las cosas sigan avanzando.",
+      "category": "pressure"
+    },
+    {
+      "id": 40,
+      "text": "Aunque todos necesiten algo de ti, tú también puedes necesitar un momento para ti.",
+      "category": "pressure"
+    },
+    {
+      "id": 41,
+      "text": "Que algo haya salido mal no significa que tú hayas hecho todo mal.",
+      "category": "mistakes"
+    },
+    {
+      "id": 42,
+      "text": "Un error habla de un momento, no de toda tu capacidad.",
+      "category": "mistakes"
+    },
+    {
+      "id": 43,
+      "text": "No uses una cosa que salió mal para borrar diez que hiciste bien.",
+      "category": "mistakes"
+    },
+    {
+      "id": 44,
+      "text": "No tienes que castigarte durante horas por algo que ya estás intentando resolver.",
+      "category": "mistakes"
+    },
+    {
+      "id": 45,
+      "text": "Equivocarte no cancela lo inteligente, responsable y capaz que eres.",
+      "category": "mistakes"
+    },
+    {
+      "id": 46,
+      "text": "Puedes reconocer que algo no salió como querías sin convertirlo en una sentencia sobre ti.",
+      "category": "mistakes"
+    },
+    {
+      "id": 47,
+      "text": "No todo lo que sale mal estaba completamente en tus manos.",
+      "category": "mistakes"
+    },
+    {
+      "id": 48,
+      "text": "A veces hacer lo mejor posible también termina en un resultado que no querías. Eso no hace menos real tu esfuerzo.",
+      "category": "mistakes"
+    },
+    {
+      "id": 49,
+      "text": "No necesitas repasar una y otra vez lo que habrías hecho diferente.",
+      "category": "mistakes"
+    },
+    {
+      "id": 50,
+      "text": "Lo importante de un error no es cuánto te castigues por él.",
+      "category": "mistakes"
+    },
+    {
+      "id": 51,
+      "text": "A veces eres mucho más dura contigo de lo que serías con cualquier otra persona.",
+      "category": "self-demand"
+    },
+    {
+      "id": 52,
+      "text": "Acuérdate de hablarte con la misma paciencia que tienes para los demás.",
+      "category": "self-demand"
+    },
+    {
+      "id": 53,
+      "text": "No necesitas hacerlo perfecto para hacerlo bien.",
+      "category": "self-demand"
+    },
+    {
+      "id": 54,
+      "text": "Tu estándar no tiene que ser siempre la versión más exigente posible.",
+      "category": "self-demand"
+    },
+    {
+      "id": 55,
+      "text": "No todo lo que podrías haber hecho era algo que tenías que hacer.",
+      "category": "self-demand"
+    },
+    {
+      "id": 56,
+      "text": "Puedes querer mejorar algo sin tratarte mal por no haberlo hecho perfecto.",
+      "category": "self-demand"
+    },
+    {
+      "id": 57,
+      "text": "No tienes que exigirte una respuesta impecable a cada situación difícil.",
+      "category": "self-demand"
+    },
+    {
+      "id": 58,
+      "text": "A veces suficiente realmente es suficiente, aunque a ti te cueste creerlo.",
+      "category": "self-demand"
+    },
+    {
+      "id": 59,
+      "text": "No conviertas cada cosa que puedes mejorar en una razón para olvidar todo lo que haces bien.",
+      "category": "self-demand"
+    },
+    {
+      "id": 60,
+      "text": "Puedes tener expectativas altas sin hacerte pequeña cuando no alcanzas una de ellas.",
+      "category": "self-demand"
+    },
+    {
+      "id": 61,
+      "text": "Hay cosas de ti que probablemente ya das por normales porque vives con ellas todos los días. Desde afuera se notan mucho más.",
+      "category": "qualities"
+    },
+    {
+      "id": 62,
+      "text": "Tu forma de esforzarte, de preocuparte por los demás y de seguir intentando no son cosas pequeñas.",
+      "category": "qualities"
+    },
+    {
+      "id": 63,
+      "text": "Eres de esas personas que siguen buscando cómo resolver algo incluso cuando ya están cansadas.",
+      "category": "qualities"
+    },
+    {
+      "id": 64,
+      "text": "Tu fortaleza no está solamente en aguantar. También está en todo lo que has aprendido a construir mientras avanzas.",
+      "category": "qualities"
+    },
+    {
+      "id": 65,
+      "text": "Hay una parte de ti que siempre intenta hacer las cosas bien. Espero que también aprenda a tratarte bien a ti.",
+      "category": "qualities"
+    },
+    {
+      "id": 66,
+      "text": "Tu inteligencia se nota también en las preguntas que haces, en cómo observas y en cómo intentas entender las cosas.",
+      "category": "qualities"
+    },
+    {
+      "id": 67,
+      "text": "No eres valiosa solo cuando estás resolviendo problemas para alguien más.",
+      "category": "qualities"
+    },
+    {
+      "id": 68,
+      "text": "Tu forma de preocuparte por hacer las cosas correctamente dice mucho de ti, incluso cuando tú solo ves lo que falta.",
+      "category": "qualities"
+    },
+    {
+      "id": 69,
+      "text": "Tienes una manera muy tuya de seguir adelante incluso después de días que habrían cansado a cualquiera.",
+      "category": "qualities"
+    },
+    {
+      "id": 70,
+      "text": "Hay mucho más en ti que lo que produces, resuelves o consigues durante un día.",
+      "category": "qualities"
+    },
+    {
+      "id": 71,
+      "text": "No tienes que impresionarme ni demostrarme nada. Ya sé la persona que eres.",
+      "category": "from-me"
+    },
+    {
+      "id": 72,
+      "text": "Si alguna vez te cuesta recordar todo lo que puedes, yo tengo bastante memoria para recordártelo.",
+      "category": "from-me"
+    },
+    {
+      "id": 73,
+      "text": "Yo he visto suficiente de ti para saber que un día difícil no define de lo que eres capaz.",
+      "category": "from-me"
+    },
+    {
+      "id": 74,
+      "text": "No voy a pensar menos de ti porque hoy estés cansada, frustrada o porque algo no haya salido bien.",
+      "category": "from-me"
+    },
+    {
+      "id": 75,
+      "text": "Desde donde yo te veo, hay muchas cosas buenas en ti que tú a veces pasas por alto.",
+      "category": "from-me"
+    },
+    {
+      "id": 76,
+      "text": "No quiero que tengas que ser fuerte todo el tiempo para sentir que puedes contar conmigo.",
+      "category": "from-me"
+    },
+    {
+      "id": 77,
+      "text": "Si hoy estás dudando de ti, yo puedo sostener un poquito de esa confianza mientras vuelve.",
+      "category": "from-me"
+    },
+    {
+      "id": 78,
+      "text": "Hay días en los que quizá necesites que alguien te recuerde quién eres fuera de todo lo que tienes que hacer. Para eso también estoy.",
+      "category": "from-me"
+    },
+    {
+      "id": 79,
+      "text": "No sé exactamente qué necesitabas escuchar hoy, pero sí sé que no tienes que atravesar cada día difícil sintiendo que estás sola con todo.",
+      "category": "from-me"
+    },
+    {
+      "id": 80,
+      "text": "Entre todo lo que puedes olvidar cuando estás bajo presión, intenta no olvidarte de ti. Y si pasa, aquí habrá alguien para recordártelo.",
+      "category": "from-me"
+    }
+  ],
+  "fromMe": [
+    {
+      "id": 1,
+      "text": "Hay algo que quería dejarte por aquí. No tiene que ser un día malo para que leas esto. Solo quería que existiera un lugar donde pudieras encontrarte con algo mío cuando te hiciera bien.",
+      "opening": true,
+      "note": "Este quería que fuera el primero."
+    },
+    {
+      "id": 2,
+      "text": "No tienes que estar pasando por algo enorme para querer sentirte acompañada. A veces basta con saber que hay alguien que pensó en ti y dejó algo aquí para cuando lo necesitaras.",
+      "note": "Esto sí quería decírtelo yo."
+    },
+    {
+      "id": 3,
+      "text": "Si alguna vez entras aquí sin saber muy bien por qué, quédate tranquila. No necesitas una razón especial. A veces uno solo necesita encontrar algo familiar.",
+      "note": "Esto sí quería decírtelo yo."
+    },
+    {
+      "id": 4,
+      "text": "No quiero que este lugar te diga quién tienes que ser ni cómo deberías sentirte. Solo quiero que te recuerde que puedes venir tal como estés.",
+      "note": "Esto sí quería decírtelo yo."
+    },
+    {
+      "id": 5,
+      "text": "Hay cosas que quizá no te digo todos los días, pero eso no significa que no las piense. Algunas simplemente necesitaban un lugar donde quedarse.",
+      "note": "Esto sí quería decírtelo yo."
+    },
+    {
+      "id": 6,
+      "text": "Si un día sientes que todo alrededor te pide demasiado, ojalá este espacio pueda ser una de las pocas cosas que no te piden nada.",
+      "note": "Esto sí quería decírtelo yo."
+    },
+    {
+      "id": 7,
+      "text": "No necesitas demostrar nada aquí. Ni estar bien, ni tener energía, ni saber qué decir. Solo quería que supieras que puedes volver cuando quieras.",
+      "note": "Esto sí quería decírtelo yo."
+    },
+    {
+      "id": 8,
+      "text": "Quizá este mensaje te encontró en un día normal. Me gusta eso también. No todo lo bonito tiene que aparecer solo cuando algo está mal.",
+      "note": "Esto sí quería decírtelo yo."
+    }
+  ]
+}

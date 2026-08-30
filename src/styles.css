@@ -1,1 +1,238 @@
-/* You can add global styles to this file, and also import other style files */
+/* --------------------------------
+PROJECT VELA — GLOBAL STYLES
+-------------------------------- */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500&display=swap');
+
+:root {
+  font-family: 'DM Sans', sans-serif;
+
+  /* --------------------------------
+     BASE
+  -------------------------------- */
+
+  --vela-bg: #e9e5df;
+  --vela-bg-rgb: 233 229 223;
+
+  --vela-text: #292725;
+  --vela-text-strong: #302d2a;
+  --vela-text-heading: #393532;
+  --vela-text-medium: #6f6964;
+  --vela-text-soft: #89827d;
+  --vela-text-muted: #928c87;
+  --vela-text-faint: #aaa39e;
+
+  /*
+    Tonos de texto con un poco más de calidez.
+    Los usaremos en mensajes personales y detalles suaves.
+  */
+  --vela-text-warm: #77706b;
+  --vela-text-warm-accent: #a07b72;
+
+  /* --------------------------------
+     ACCENT
+  -------------------------------- */
+
+  --vela-accent: #9a7168;
+  --vela-accent-soft: #b88b80;
+  --vela-accent-deep: #76574f;
+
+  --vela-accent-rgb: 190 143 132;
+  --vela-accent-soft-rgb: 184 139 128;
+
+  /* --------------------------------
+     BLUSH / WARM SURFACES
+  -------------------------------- */
+
+  --vela-blush-rgb: 241 232 228;
+  --vela-blush-light-rgb: 245 238 235;
+  --vela-blush-pale-rgb: 239 226 221;
+  --vela-blush-extra-rgb: 236 219 213;
+  --vela-blush-warm-rgb: 220 194 186;
+
+  /* --------------------------------
+     SURFACES / BORDERS / SHADOWS
+  -------------------------------- */
+
+  --vela-surface-rgb: 246 243 239;
+  --vela-ink-rgb: 41 39 37;
+  --vela-shadow-rgb: 40 35 32;
+  --vela-deep-shadow-rgb: 118 85 77;
+
+  color: var(--vela-text);
+  background: var(--vela-bg);
+
+  color-scheme: light;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* --------------------------------
+DARK THEME
+-------------------------------- */
+
+html[data-theme='dark'] {
+  /* --------------------------------
+     BASE — NAVY
+  -------------------------------- */
+
+  --vela-bg: #111827;
+  --vela-bg-rgb: 17 24 39;
+
+  /* --------------------------------
+     TEXT
+  -------------------------------- */
+
+  --vela-text: #edf1f6;
+  --vela-text-strong: #f3f5f8;
+  --vela-text-heading: #f7f8fa;
+
+  --vela-text-medium: #c5cbd4;
+  --vela-text-soft: #aab2be;
+  --vela-text-muted: #9099a7;
+  --vela-text-faint: #727c8b;
+
+  /*
+    Sustituyen colores beige/marrón que en dark
+    tenían poco contraste.
+  */
+  --vela-text-warm: #bbb1b3;
+  --vela-text-warm-accent: #d19b92;
+
+  /* --------------------------------
+     ACCENT — TERRACOTA SUAVE
+  -------------------------------- */
+
+  --vela-accent: #d8a39a;
+  --vela-accent-soft: #ca9187;
+  --vela-accent-deep: #e4b1a9;
+
+  --vela-accent-rgb: 216 163 154;
+  --vela-accent-soft-rgb: 202 145 135;
+
+  /* --------------------------------
+     WARM SURFACES OVER NAVY
+  -------------------------------- */
+
+  /*
+    Conservan un toque cálido, pero contienen más
+    azul/gris para evitar que las tarjetas se vean cafés.
+  */
+
+  --vela-blush-rgb: 44 45 58;
+  --vela-blush-light-rgb: 48 49 63;
+  --vela-blush-pale-rgb: 46 45 60;
+  --vela-blush-extra-rgb: 50 48 63;
+  --vela-blush-warm-rgb: 56 50 63;
+
+  /* --------------------------------
+     CARDS / SURFACES
+  -------------------------------- */
+
+  --vela-surface-rgb: 30 41 59;
+
+  /* --------------------------------
+     BORDERS
+  -------------------------------- */
+
+  --vela-ink-rgb: 226 232 240;
+
+  /* --------------------------------
+     SHADOWS
+  -------------------------------- */
+
+  --vela-shadow-rgb: 2 6 17;
+  --vela-deep-shadow-rgb: 2 6 17;
+
+  color-scheme: dark;
+}
+
+/* --------------------------------
+BASE RESET
+-------------------------------- */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  background: var(--vela-bg);
+
+  transition:
+    background-color 260ms ease;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  min-height: 100dvh;
+
+  margin: 0;
+
+  background: var(--vela-bg);
+  color: var(--vela-text);
+
+  transition:
+    background-color 260ms ease,
+    color 260ms ease;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible {
+  outline: 2px solid var(--vela-accent-soft);
+  outline-offset: 3px;
+}
+
+::selection {
+  background: rgb(var(--vela-accent-rgb) / 0.24);
+  color: var(--vela-text);
+}
+
+/* --------------------------------
+HOVER CONTROL
+-------------------------------- */
+
+/*
+  Al cargar la aplicación, los estados hover permanecen
+  desactivados.
+
+  app.ts agrega la clase "hover-enabled" al elemento <html>
+  después del primer movimiento real del mouse.
+
+  Debido al encapsulamiento de estilos de Angular,
+  los :hover dentro de los componentes deben usar:
+
+  :host-context(.hover-enabled) .elemento:hover
+*/
+
+html:not(.hover-enabled),
+html:not(.hover-enabled) body {
+  cursor: default;
+}
+
+/*
+  En dispositivos táctiles evitamos comportamientos hover
+  persistentes o inesperados.
+*/
+
+@media (hover: none),
+(pointer: coarse) {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+}

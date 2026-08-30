@@ -1,0 +1,697 @@
+<main class="accompanied">
+  <div class="accompanied__background"></div>
+
+  @if (isMenu()) {
+
+    <div class="accompanied__container">
+
+      <header class="accompanied__header">
+        <a
+          class="back-button"
+          routerLink="/home"
+          aria-label="Volver al inicio">
+          ←
+        </a>
+
+        <span class="accompanied__eyebrow">
+          Un lugar para quedarte un ratito
+        </span>
+      </header>
+
+      <section class="accompanied__intro">
+        <span class="accompanied__intro-label">
+          Para cuando no quieras estar sola con todo
+        </span>
+
+        <h1>Estoy aquí.</h1>
+
+        <p>
+          No tienes que tener las palabras correctas
+          ni saber exactamente qué necesitas.
+          Puedes quedarte aquí un ratito.
+        </p>
+      </section>
+
+      <section class="accompanied__question">
+        <span>¿Qué te vendría bien ahora?</span>
+      </section>
+
+      <section class="accompanied__options">
+
+        <button
+          class="companion-card companion-card--primary"
+          type="button"
+          (click)="openStayWithMe()">
+
+          <span class="companion-card__icon">○</span>
+
+          <span class="companion-card__content">
+            <strong>Solo quédate conmigo</strong>
+            <small>No tienes que hacer nada</small>
+          </span>
+
+          <span class="companion-card__arrow">→</span>
+        </button>
+
+        <button
+          class="companion-card"
+          type="button"
+          (click)="openHearMessage()">
+
+          <span class="companion-card__icon">♡</span>
+
+          <span class="companion-card__content">
+            <strong>Dime algo que necesite escuchar</strong>
+            <small>Tal vez esto era justo para hoy</small>
+          </span>
+
+          <span class="companion-card__arrow">→</span>
+        </button>
+
+        <button
+          class="companion-card"
+          type="button"
+          (click)="openBadDay()">
+          <span class="companion-card__icon">〰</span>
+          <span class="companion-card__content">
+            <strong>Hoy fue un día horrible</strong>
+            <small>No voy a intentar arreglarlo</small>
+          </span>
+          <span class="companion-card__arrow">→</span>
+        </button>
+
+        <button
+          class="companion-card"
+          type="button"
+          (click)="openBeautifulMemory()">
+          <span class="companion-card__icon">◌</span>
+          <span class="companion-card__content">
+            <strong>Recuérdame algo bonito</strong>
+            <small>Hay cosas que vale la pena guardar</small>
+          </span>
+          <span class="companion-card__arrow">→</span>
+        </button>
+
+        <button
+          class="companion-card companion-card--special"
+          type="button"
+          (click)="openFromMe()">
+          <span class="companion-card__icon">✦</span>
+          <span class="companion-card__content">
+            <strong>Hay algo que quiero decirte</strong>
+            <small>Esto sí lo escribí pensando en ti</small>
+          </span>
+          <span class="companion-card__arrow">→</span>
+        </button>
+
+      </section>
+
+      <a
+        class="accompanied-menu-back"
+        routerLink="/home">
+        <span>←</span>
+        <span>Volver</span>
+      </a>
+
+      <footer class="accompanied__footer">
+        No tienes que elegir bien.
+        Solo elige lo que se sienta bien ahora.
+      </footer>
+
+    </div>
+
+  }
+
+  @if (isStay()) {
+
+    <section class="stay">
+      <div class="stay__glow stay__glow--one"></div>
+      <div class="stay__glow stay__glow--two"></div>
+
+      <button
+        class="stay__back"
+        type="button"
+        aria-label="Volver"
+        (click)="backToMenu()">
+        ←
+      </button>
+
+      <div class="stay__content">
+        <span class="stay__eyebrow">Solo quédate conmigo</span>
+
+        <span class="stay__phrase-count">
+          Verás un total de 7 frases
+        </span>
+
+        <div class="stay__message-area">
+          <p
+            class="stay__message"
+            [class.stay__message--visible]="messageVisible()">
+            {{ currentMessage() }}
+          </p>
+        </div>
+
+        @if (!stayFinished()) {
+          <div class="stay__presence">
+            <span></span>
+            <small>No tienes que hacer nada.</small>
+          </div>
+        }
+
+        @if (stayFinished()) {
+          <div class="stay__ending">
+            <span class="stay__ending-symbol">○</span>
+            <p>¿Quieres quedarte un poquito más?</p>
+
+            <div class="stay__actions">
+              <button
+                class="stay__action stay__action--primary"
+                type="button"
+                (click)="stayAWhileLonger()">
+                Sí, un ratito más
+              </button>
+
+              <button
+                class="stay__action"
+                type="button"
+                (click)="backToMenu()">
+                Ya estoy lista
+              </button>
+            </div>
+          </div>
+        }
+      </div>
+
+      <span class="stay__footer">Este momento no tiene prisa.</span>
+    </section>
+
+  }
+
+  @if (isHear()) {
+
+    <section class="hear">
+      <div class="hear__glow hear__glow--one"></div>
+      <div class="hear__glow hear__glow--two"></div>
+
+      <button
+        class="hear__back"
+        type="button"
+        aria-label="Volver"
+        (click)="backToMenu()">
+        ←
+      </button>
+
+      <div class="hear__content">
+        <span class="hear__eyebrow">
+          Tal vez necesitabas escuchar esto hoy
+        </span>
+
+        <div class="hear__message-wrap">
+          <span class="hear__symbol">♡</span>
+
+          <p
+            class="hear__message"
+            [class.hear__message--visible]="hearVisible()">
+            {{ hearMessage() }}
+          </p>
+
+          <span
+            class="hear__from"
+            [class.hear__from--visible]="hearVisible()">
+            Esto quería recordártelo yo.
+          </span>
+        </div>
+
+        <div class="hear__actions">
+          <button
+            class="hear__action hear__action--primary"
+            type="button"
+            [disabled]="hearTransitioning()"
+            (click)="nextHearMessage()">
+            Dime otra cosa
+          </button>
+
+          <button
+            class="hear__action"
+            type="button"
+            (click)="backToMenu()">
+            Volver
+          </button>
+        </div>
+      </div>
+
+      <span class="hear__footer">
+        No tienes que quedarte con todo. Solo con lo que te sirva hoy.
+      </span>
+    </section>
+
+  }
+
+
+
+  @if (isBadDay()) {
+
+    <section class="bad-day">
+      <div class="bad-day__glow bad-day__glow--one"></div>
+      <div class="bad-day__glow bad-day__glow--two"></div>
+
+      <button
+        class="bad-day__back"
+        type="button"
+        aria-label="Volver"
+        (click)="backToMenu()">
+        ←
+      </button>
+
+      <div class="bad-day__content">
+        <span class="bad-day__eyebrow">Hoy fue un día horrible</span>
+
+        @if (badDayStage() === 'choice') {
+          <div class="bad-day__intro">
+            <span class="bad-day__symbol">〰</span>
+
+            <h2>Hoy no tienes que verle el lado bueno a nada.</h2>
+
+            <p>
+              Si quieres, puedes contarme un poquito de qué pasó.
+              Y si no quieres hablar de eso, también está bien.
+            </p>
+
+            <div class="bad-day__choices">
+              <button
+                class="bad-day__choice bad-day__choice--primary"
+                type="button"
+                (click)="openBadDayWrite()">
+                <span>Quiero sacarlo</span>
+                <small>Escribe lo que quieras. Esto no se guarda.</small>
+              </button>
+
+              <button
+                class="bad-day__choice"
+                type="button"
+                (click)="openBadDayQuiet()">
+                <span>No quiero hablar de eso</span>
+                <small>No necesitas explicarme nada.</small>
+              </button>
+
+              <button
+                class="bad-day__choice bad-day__choice--soft"
+                type="button"
+                (click)="openBadDayEnough()">
+                <span>Solo dime que hoy ya fue suficiente</span>
+                <small>Sin consejos. Solo eso.</small>
+              </button>
+            </div>
+
+            <button
+              class="bad-day__choice-back"
+              type="button"
+              (click)="backToMenu()">
+              <span>←</span>
+              <span>Volver</span>
+            </button>
+          </div>
+        }
+
+        @if (badDayStage() === 'write') {
+          <div class="bad-day__write">
+            <span class="bad-day__section-label">Puedes dejarlo aquí</span>
+
+            <h2>No hace falta escribirlo bonito.</h2>
+
+            <p>
+              Escribe lo que pasó, lo que te molestó o simplemente todo
+              lo que ya no quieres seguir pensando por un rato.
+            </p>
+
+            <textarea
+              class="bad-day__textarea"
+              rows="8"
+              maxlength="4000"
+              placeholder="Escribe aquí lo que quieras soltar..."
+              [value]="badDayText()"
+              (input)="updateBadDayText($event)"></textarea>
+
+            <span class="bad-day__privacy">
+              Nada de lo que escribas aquí se guarda.
+            </span>
+
+            <div class="bad-day__actions">
+              <button
+                class="bad-day__action bad-day__action--primary"
+                type="button"
+                (click)="releaseBadDay()">
+                Ya lo saqué
+              </button>
+
+              <button
+                class="bad-day__action"
+                type="button"
+                (click)="backToBadDayChoice()">
+                Volver
+              </button>
+            </div>
+          </div>
+        }
+
+        @if (badDayStage() === 'released') {
+          <div class="bad-day__message-view">
+            <span class="bad-day__symbol">○</span>
+
+            <p
+              class="bad-day__message"
+              [class.bad-day__message--visible]="badDayMessageVisible()">
+              {{ badDayMessage() }}
+            </p>
+
+            <span
+              class="bad-day__note"
+              [class.bad-day__note--visible]="badDayMessageVisible()">
+              No voy a intentar arreglarlo. Solo quería darte un lugar para dejarlo.
+            </span>
+
+            <div class="bad-day__actions bad-day__actions--message">
+              <button
+                class="bad-day__action bad-day__action--primary"
+                type="button"
+                (click)="backToMenu()">
+                Ya estoy lista
+              </button>
+
+              <button
+                class="bad-day__action"
+                type="button"
+                (click)="openBadDayQuiet()">
+                Quédate conmigo un poquito
+              </button>
+            </div>
+          </div>
+        }
+
+        @if (badDayStage() === 'quiet' || badDayStage() === 'enough') {
+          <div class="bad-day__message-view">
+            <span class="bad-day__symbol">
+              {{ badDayStage() === 'enough' ? '○' : '〰' }}
+            </span>
+
+            <p
+              class="bad-day__message"
+              [class.bad-day__message--visible]="badDayMessageVisible()">
+              {{ badDayMessage() }}
+            </p>
+
+            <span
+              class="bad-day__note"
+              [class.bad-day__note--visible]="badDayMessageVisible()">
+              {{ badDayStage() === 'enough'
+                ? 'Por hoy, no tienes que hacer nada más aquí.'
+                : 'No tienes que contarme nada para que me quede.' }}
+            </span>
+
+            <div class="bad-day__actions bad-day__actions--message">
+              <button
+                class="bad-day__action bad-day__action--primary"
+                type="button"
+                [disabled]="badDayTransitioning()"
+                (click)="nextBadDayMessage()">
+                {{ badDayStage() === 'enough' ? 'Dímelo otra vez' : 'Dime otra cosa' }}
+              </button>
+
+              <button
+                class="bad-day__action"
+                type="button"
+                (click)="backToBadDayChoice()">
+                Volver
+              </button>
+            </div>
+          </div>
+        }
+      </div>
+
+      <span class="bad-day__footer">
+        Hoy no tienes que convertir nada de esto en algo positivo.
+      </span>
+    </section>
+
+  }
+
+
+  @if (isBeautifulMemory()) {
+
+    <section class="beautiful-memory">
+      <div class="beautiful-memory__glow beautiful-memory__glow--one"></div>
+      <div class="beautiful-memory__glow beautiful-memory__glow--two"></div>
+
+      <button
+        class="beautiful-memory__back"
+        type="button"
+        aria-label="Volver"
+        (click)="backToMenu()">
+        ←
+      </button>
+
+      <div class="beautiful-memory__content">
+        <span class="beautiful-memory__eyebrow">Recuérdame algo bonito</span>
+
+        <div class="beautiful-memory__capsule">
+          <span class="beautiful-memory__symbol">◌</span>
+
+          @if (beautifulMemory()) {
+            <div
+              class="beautiful-memory__copy"
+              [class.beautiful-memory__copy--visible]="beautifulMemoryVisible()">
+
+              <span class="beautiful-memory__label">Una pequeña cápsula para ti</span>
+
+              @if (beautifulMemory()!.isPersonal) {
+                <span class="beautiful-memory__personal-badge">
+                  Dejé esta especialmente para ti
+                </span>
+              }
+
+              <h2>{{ beautifulMemory()!.title }}</h2>
+              <p>{{ beautifulMemory()!.text }}</p>
+
+              @if (beautifulMemory()!.note) {
+                <span class="beautiful-memory__note">
+                  {{ beautifulMemory()!.note }}
+                </span>
+              }
+            </div>
+          }
+        </div>
+
+        <div class="beautiful-memory__actions">
+          <button
+            class="beautiful-memory__action beautiful-memory__action--primary"
+            type="button"
+            [disabled]="beautifulMemoryTransitioning()"
+            (click)="nextBeautifulMemory()">
+            Recuérdame otra
+          </button>
+
+          <button
+            class="beautiful-memory__action"
+            [class.beautiful-memory__action--saved]="beautifulMemorySaved()"
+            type="button"
+            [disabled]="beautifulMemoryTransitioning() || !beautifulMemory()"
+            (click)="toggleBeautifulMemorySaved()">
+            {{ beautifulMemorySaved() ? 'Guardada para ti ♡' : 'Guarda esta para mí ♡' }}
+          </button>
+
+          <button
+            class="beautiful-memory__action beautiful-memory__action--library"
+            type="button"
+            [disabled]="beautifulMemoryTransitioning()"
+            (click)="openSavedMemories()">
+            Las que guardaste ♡
+          </button>
+
+          <button
+            class="beautiful-memory__action beautiful-memory__action--back"
+            type="button"
+            [disabled]="beautifulMemoryTransitioning()"
+            (click)="backToMenu()">
+            ← Volver
+          </button>
+        </div>
+      </div>
+
+      <span class="beautiful-memory__footer">
+        Algunas cosas bonitas merecen encontrarte más de una vez.
+      </span>
+    </section>
+
+  }
+
+
+  @if (isSavedMemories()) {
+
+    <section class="saved-memories">
+      <div class="saved-memories__glow saved-memories__glow--one"></div>
+      <div class="saved-memories__glow saved-memories__glow--two"></div>
+
+      <button
+        class="saved-memories__back"
+        type="button"
+        aria-label="Volver"
+        (click)="openBeautifulMemory()">
+        ←
+      </button>
+
+      <div class="saved-memories__content">
+        <span class="saved-memories__eyebrow">Las que guardaste ♡</span>
+
+        <header class="saved-memories__header">
+          <span class="saved-memories__symbol">♡</span>
+          <h2>Tu cajita de cosas bonitas.</h2>
+          <p>
+            Estas son las cápsulas que decidiste conservar.
+            Puedes volver a leerlas cuando quieras.
+          </p>
+        </header>
+
+        @if (savedMemoriesEmpty()) {
+          <div class="saved-memories__empty">
+            <span>◌</span>
+            <strong>Aún no guardaste ninguna.</strong>
+            <p>
+              Cuando una cápsula te guste, toca “Guarda esta para mí ♡”
+              y aparecerá aquí.
+            </p>
+
+            <button
+              class="saved-memories__empty-action"
+              type="button"
+              (click)="openBeautifulMemory()">
+              Volver a las cápsulas
+            </button>
+          </div>
+        } @else {
+          <div class="saved-memories__list">
+            @for (memory of savedMemories(); track memory.id) {
+              <article
+                class="saved-memory-card"
+                [class.saved-memory-card--personal]="memory.isPersonal">
+
+                <button
+                  class="saved-memory-card__open"
+                  type="button"
+                  (click)="reopenSavedMemory(memory.id)">
+
+                  <span class="saved-memory-card__topline">
+                    <span class="saved-memory-card__icon">
+                      {{ memory.isPersonal ? '✦' : '◌' }}
+                    </span>
+
+                    @if (memory.isPersonal) {
+                      <span class="saved-memory-card__personal">
+                        La dejé para ti
+                      </span>
+                    }
+                  </span>
+
+                  <strong>{{ memory.title }}</strong>
+                  <p>{{ memory.text }}</p>
+
+                  @if (memory.note) {
+                    <small>{{ memory.note }}</small>
+                  }
+                </button>
+
+                <button
+                  class="saved-memory-card__remove"
+                  type="button"
+                  aria-label="Quitar de guardadas"
+                  (click)="removeSavedMemory(memory.id)">
+                  Quitar ♡
+                </button>
+              </article>
+            }
+          </div>
+        }
+      </div>
+
+      <button
+        class="saved-memories__visible-back"
+        type="button"
+        (click)="openBeautifulMemory()">
+        <span>←</span>
+        <span>Volver a las cápsulas</span>
+      </button>
+
+      <span class="saved-memories__footer">
+        Lo que guardes aquí se queda en este dispositivo.
+      </span>
+    </section>
+
+  }
+
+
+  @if (isFromMe()) {
+
+    <section class="from-me">
+      <div class="from-me__glow from-me__glow--one"></div>
+      <div class="from-me__glow from-me__glow--two"></div>
+
+      <button
+        class="from-me__back"
+        type="button"
+        aria-label="Volver"
+        (click)="backToMenu()">
+        ←
+      </button>
+
+      <div class="from-me__content">
+        <span class="from-me__eyebrow">
+          Hay algo que quiero decirte
+        </span>
+
+        <div class="from-me__message-wrap">
+          <span class="from-me__symbol">✦</span>
+
+          @if (fromMeMessage()) {
+            <div
+              class="from-me__copy"
+              [class.from-me__copy--visible]="fromMeVisible()">
+
+              <p class="from-me__message">
+                {{ fromMeMessage()!.text }}
+              </p>
+
+              @if (fromMeMessage()!.note) {
+                <span class="from-me__note">
+                  {{ fromMeMessage()!.note }}
+                </span>
+              }
+            </div>
+          }
+        </div>
+
+        <div class="from-me__actions">
+          <button
+            class="from-me__action from-me__action--primary"
+            type="button"
+            [disabled]="fromMeTransitioning()"
+            (click)="nextFromMeMessage()">
+            Quiero leer otro ✦
+          </button>
+
+          <button
+            class="from-me__action"
+            type="button"
+            [disabled]="fromMeTransitioning()"
+            (click)="keepFromMeMessage()">
+            Me quedo con este
+          </button>
+        </div>
+      </div>
+
+      <span class="from-me__footer">
+        No tienes que leerlos todos hoy.
+      </span>
+    </section>
+
+  }
+
+</main>

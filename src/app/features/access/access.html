@@ -1,0 +1,112 @@
+<div class="access">
+
+  <button
+    class="access__theme"
+    type="button"
+    (click)="toggleTheme()">
+
+    {{ isDark() ? '☀' : '◐' }}
+
+  </button>
+
+
+  <main class="access__container">
+
+
+    <div class="access__mark">
+      ~
+    </div>
+
+
+    <h1>
+
+      {{
+        showHint()
+          ? 'Hice un pequeño lugar para ti. Espero que encuentres aquí aunque sea un momento de calma.'
+          : 'Que bueno verte otra vez.'
+      }}
+
+    </h1>
+
+
+    @if (showHint()) {
+
+      <p class="access__text">
+
+        Para entrar necesitas recordar una palabra.
+
+      </p>
+
+
+      <section class="access__hint">
+
+        <span>
+          Pista
+        </span>
+
+
+        <p>
+
+          Es una palabra que la persona que hizo
+          esta app dice que tú le robaste,
+          pero tú sigues diciendo que siempre
+          fue tuya.
+
+        </p>
+
+      </section>
+
+    }
+    @else {
+
+      <p class="access__text">
+
+        Escribe la palabra:
+
+      </p>
+
+    }
+
+
+
+    <input
+      class="access__input"
+      placeholder="Escribe la palabra..."
+      type="text"
+      autocomplete="off"
+      [value]="word()"
+      (input)="word.set($any($event.target).value)"
+      (keyup.enter)="enter()"
+    >
+
+
+    <button
+      class="access__button"
+      type="button"
+      (click)="enter()"
+      [disabled]="entering()">
+
+      {{
+        entering()
+          ? 'Entrando...'
+          : 'Entrar'
+      }}
+
+    </button>
+
+
+    @if (error()) {
+
+      <p class="access__error">
+
+        {{ error() }}
+
+      </p>
+
+    }
+
+
+  </main>
+
+
+</div>
