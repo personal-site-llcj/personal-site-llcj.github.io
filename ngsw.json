@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1788147064121,
+  "timestamp": 1788147587540,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -23,7 +23,7 @@
         "/index.html",
         "/main-QKFDO2BE.js",
         "/manifest.webmanifest",
-        "/styles-U2LUC74C.css"
+        "/styles-IRBL2KOW.css"
       ],
       "patterns": []
     },
@@ -109,7 +109,7 @@
     "/icons/icon-512x512.png": "3f51744cc77d0006afd4de015fae5087187c8e2b",
     "/icons/icon-72x72.png": "db4c71e34daf9a622bddcc53fc57825f7fad1471",
     "/icons/icon-96x96.png": "6dd2dfc964383f833286ffafc4e41eb89941c9bb",
-    "/index.html": "b1e2112c3d4ef3c80f2647da7fd6f5adaf8a2aee",
+    "/index.html": "a7a320b3b78860f0aded91c9335205fbe243e599",
     "/landscapes/1.jpg": "a1d07af0040d102c78070dedc443bd7acf460b37",
     "/landscapes/10.jpg": "f94a5597e1213b6ce13fca0771d8e80ec7032cfc",
     "/landscapes/11.jpg": "ef2a15cc9c26272a1682da25a03cc45f57747bdf",
@@ -155,7 +155,7 @@
     "/landscapes/9.jpg": "80e5d319c0b8475918d5e30e4a9c16335594d966",
     "/main-QKFDO2BE.js": "8b98ea602219eb5ab389e3c7bae5b3827439b28b",
     "/manifest.webmanifest": "57a33d211489993044da515d8718b0a9a2f58c71",
-    "/styles-U2LUC74C.css": "9681856f7bc1ff36444f07065e52c8b7ac9c6475"
+    "/styles-IRBL2KOW.css": "61874533488a7c89d56d5e53390cfc28b6081f0e"
   },
   "navigationUrls": [
     {
