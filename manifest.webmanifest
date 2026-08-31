@@ -1,9 +1,11 @@
 {
-  "name": "frontend",
-  "short_name": "frontend",
+  "name": "Un pequeño espacio",
+  "short_name": "Lily App",
   "display": "standalone",
   "scope": "./",
   "start_url": "./",
+  "theme_color": "#111827",
+  "background_color": "#111827",
   "icons": [
     {
       "src": "icons/icon-72x72.png",

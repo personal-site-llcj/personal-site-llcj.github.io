@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1788136402301,
+  "timestamp": 1788136938007,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -109,7 +109,7 @@
     "/icons/icon-512x512.png": "1de182f76f7329dfa8f9fcdd1fdcdd695bea6a99",
     "/icons/icon-72x72.png": "aa88a6096bd973be7f6d7a5489bfa6bc2463f8c4",
     "/icons/icon-96x96.png": "7fb8f59c30ce2ff12c700321a0b39e14b3dc8f95",
-    "/index.html": "16a8899b79774ee35016e5573e953ab4ce7323b8",
+    "/index.html": "c739f96c2f96a5327d1be28aff2682939233e0d0",
     "/landscapes/1.jpg": "a1d07af0040d102c78070dedc443bd7acf460b37",
     "/landscapes/10.jpg": "f94a5597e1213b6ce13fca0771d8e80ec7032cfc",
     "/landscapes/11.jpg": "ef2a15cc9c26272a1682da25a03cc45f57747bdf",
@@ -154,7 +154,7 @@
     "/landscapes/8.jpg": "a33d617e0504904ad428ce51b6dae61929f58299",
     "/landscapes/9.jpg": "80e5d319c0b8475918d5e30e4a9c16335594d966",
     "/main-6A6I2XAP.js": "954eb675897c43da23becee91343a968a61934bc",
-    "/manifest.webmanifest": "4713c64739ff581e059201e4ce98e3e23d0cfe54",
+    "/manifest.webmanifest": "57a33d211489993044da515d8718b0a9a2f58c71",
     "/styles-U2LUC74C.css": "9681856f7bc1ff36444f07065e52c8b7ac9c6475"
   },
   "navigationUrls": [
