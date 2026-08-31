@@ -1,12 +1,102 @@
 [
   {
     "id": 1,
-    "text": "Quiero que recuerdes algo: no tienes que ser fuerte todo el tiempo. Sé que muchas veces quieres poder con todo y terminas cargando más cosas de las que deberías, pero también está bien detenerte un momento y descansar.",
+    "text": "No tienes que ser fuerte todo el tiempo. Sé que muchas veces quieres poder con todo y terminas cargando más cosas de las que deberías, pero también está bien detenerte un momento y descansar.",
     "signature": "Jordi"
   },
   {
     "id": 2,
     "text": "Algo que siempre he admirado de ti es la forma en la que sigues adelante. Incluso cuando las cosas no son fáciles, encuentras la manera de levantarte y seguir siendo tú.",
+    "signature": "Jordi"
+  },
+  {
+    "id": 3,
+    "text": "Tu forma de pensar, tu manera de cuidar a quienes quieres y tu corazón dicen mucho de ti.",
+    "signature": "Jordi"
+  },
+  {
+    "id": 4,
+    "text": "Espero que nunca olvides que también mereces recibir la misma paciencia, cariño y comprensión que tantas veces das a los demás.",
+    "signature": "Jordi"
+  },
+  {
+    "id": 5,
+    "text": "Me gusta mucho la persona que eres. No solamente por lo que haces, sino por la forma en la que eres cuando nadie te está viendo.",
+    "signature": "Jordi"
+  },
+  {
+    "id": 6,
+    "text": "Sé que muchas veces eres más fuerte de lo que deberías tener que ser. Pero quiero recordarte que no tienes que demostrarle nada a nadie para ser suficiente.",
+    "signature": "Jordi"
+  },
+  {
+    "id": 7,
+    "text": "Una de las cosas que más valoro de ti es esa mezcla que tienes: puedes ser muy fuerte cuando hace falta, pero también tienes un corazón muy noble.",
+    "signature": "Jordi"
+  },
+  {
+    "id": 8,
+    "text": "Si algún día dudas de ti, recuerda todo lo que has superado. Hay una razón por la que llegaste hasta donde estás, y es porque tienes más fuerza de la que a veces crees.",
+    "signature": "Jordi"
+  },
+  {
+    "id": 9,
+    "text": "Gracias por todas las veces que me has dejado conocer un poquito más de ti. Sé que no cualquiera tiene la oportunidad de ver esa parte tuya.",
+    "signature": "Jordi"
+  },
+  {
+    "id": 10,
+    "text": "Me gusta que contigo puedo ser yo. Hay personas con las que puedes hablar, pero pocas con las que puedes sentir que realmente hay confianza.",
+    "signature": "Jordi"
+  },
+  {
+    "id": 11,
+    "text": "No olvides celebrar también las pequeñas cosas. A veces estamos tan concentrados en lo que falta que olvidamos todo lo que ya hemos logrado.",
+    "signature": "Jordi"
+  },
+  {
+    "id": 12,
+    "text": "Ojalá pudieras verte por un momento como te veo yo. Creo que serías mucho más amable contigo misma.",
+    "signature": "Jordi"
+  },
+  {
+    "id": 13,
+    "text": "Espero que siempre tengas un lugar donde puedas descansar de intentar tener todo bajo control y simplemente puedas ser tú.",
+    "signature": "Jordi"
+  },
+  {
+    "id": 14,
+    "text": "Hay muchas cosas bonitas en una persona, pero creo que una de las más especiales es tener un corazón que sigue siendo bueno incluso después de todo lo que le pasa.",
+    "signature": "Jordi"
+  },
+  {
+    "id": 15,
+    "text": "Y por si algún día se te olvida: eres una persona muy especial. No por lo que haces por los demás, sino por quién eres.",
+    "signature": "Jordi"
+  },
+  {
+    "id": 16,
+    "text": "Quiero que sepas que me alegra mucho haber podido conocerte como realmente eres, no solo la parte que todos ven, sino también esa parte que pocas personas tienen la oportunidad de conocer.",
+    "signature": "Jordi"
+  },
+  {
+    "id": 17,
+    "text": "Nunca dudes del impacto que tienes en las personas que te quieren. A veces no nos damos cuenta de lo importantes que somos para alguien más.",
+    "signature": "Jordi"
+  },
+  {
+    "id": 18,
+    "text": "Me encanta esa forma tuya de preocuparte por los demás. Aunque a veces olvides hacerlo por ti, eso dice mucho del corazón que tienes.",
+    "signature": "Jordi"
+  },
+  {
+    "id": 19,
+    "text": "Gracias por los momentos que hemos compartido, por las risas, las conversaciones y por dejarme formar parte de una pequeña parte de tu vida.",
+    "signature": "Jordi"
+  },
+  {
+    "id": 20,
+    "text": "Solo quería recordarte algo: eres alguien que vale muchísimo. Espero que nunca pierdas esa forma tan bonita que tienes de ser tú.",
     "signature": "Jordi"
   }
 ]
